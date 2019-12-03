@@ -9,6 +9,7 @@
 Practionner.destroy_all
 Patient.destroy_all
 Appointment.destroy_all
+Day.destroy_all
 
 10.times do |practionner|
   Practionner.create(first_name: "Prénom#{practionner}",last_name: "Nom#{practionner}")
@@ -25,4 +26,16 @@ end
   Appointment.create(date: "Date#{appointment}",lieu: "Lieu#{appointment}", 
   	patient_id: Patient.all.sample.id, practionner_id: Practionner.all.sample.id )
   puts "10 rendez-vous ont été crées"
+end
+
+10.times do |day|
+  Day.create(date: "Date#{day}", hours_of_sleep: "Heures de sommeil#{day}",
+  	mood: "Humeur#{day}", treatment: "Traitement#{day}")
+  puts "10 jours ont été crées"
+end
+
+
+10.times do |datashow|
+  DataShow.create(patient_id: Patient.all.sample.id, day_id: Day.all.sample.id )
+  puts "10 datashow ont été crées"
 end
