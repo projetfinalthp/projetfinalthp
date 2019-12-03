@@ -1,0 +1,2 @@
+class DataShow < ApplicationRecord
+end
