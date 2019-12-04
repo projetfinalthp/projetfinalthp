@@ -10,6 +10,7 @@ Practionner.destroy_all
 Patient.destroy_all
 Appointment.destroy_all
 Day.destroy_all
+DataShow.destroy_all
 
 10.times do |practionner|
   Practionner.create(first_name: "Prénom#{practionner}",last_name: "Nom#{practionner}")
@@ -39,3 +40,6 @@ end
   DataShow.create(patient_id: Patient.all.sample.id, day_id: Day.all.sample.id )
   puts "10 datashow ont été crées"
 end
+
+puts "le seed est fait !"
+
