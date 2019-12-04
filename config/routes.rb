@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   devise_for :practionners
   resources :patients
   resources :practionners
+  resources :patient_list
  
 end
