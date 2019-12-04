@@ -6,4 +6,11 @@ class Practionner < ApplicationRecord
          
   has_many :appointments, dependent: :delete_all #This line enable to create a seed without problem
   has_many :patients, through: :appointments
+
+  after_create :welcome_send
+
+  def welcome_send
+    PractionnerMailer.welcome_email(self).deliver_now
+  end
+
 end
