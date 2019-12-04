@@ -1,0 +1,2 @@
+class PractionnerMailer < ApplicationMailer
+end
