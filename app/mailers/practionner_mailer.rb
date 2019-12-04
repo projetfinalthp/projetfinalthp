@@ -10,4 +10,7 @@ class PractionnerMailer < ApplicationMailer
 
     # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
     mail(to: @practionner.email, subject: 'Bienvenue chez Bipolink !') 
+    
+	end
+
 end
