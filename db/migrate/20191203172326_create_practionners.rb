@@ -3,6 +3,7 @@ class CreatePractionners < ActiveRecord::Migration[5.2]
     create_table :practionners do |t|
       t.string :first_name
       t.string :last_name
+      
 
       t.timestamps
     end

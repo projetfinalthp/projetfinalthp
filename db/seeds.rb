@@ -13,12 +13,14 @@ Day.destroy_all
 DataShow.destroy_all
 
 10.times do |practionner|
-  Practionner.create(first_name: "Prénom#{practionner}",last_name: "Nom#{practionner}")
+  Practionner.create(first_name: "Prénom#{practionner}",last_name: "Nom#{practionner}", 
+  	email: "Email#{practionner}@example.com", password: "Password#{practionner}")
   puts "10 praticiens ont été crées"
 end
 
 10.times do |patient|
-  Patient.create(first_name: "Prénom#{patient}",last_name: "Nom#{patient}")
+  Patient.create(first_name: "Prénom#{patient}",last_name: "Nom#{patient}", 
+  	email: "Email#{patient}@example.com", password: "Password#{patient}")
   puts "10 patients ont été crées"
 end
 
