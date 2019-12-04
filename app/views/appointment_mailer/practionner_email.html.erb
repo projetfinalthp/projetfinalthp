@@ -4,9 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Bonjour <%= @practionner.first_name %> et bienvenue chez Bipolink !</h1>
+    <h1>Bonjour <%= @practionner.first_name %>!</h1>
+    <h2>Vous venez de créer un nouveau rendez-vous sur Bipolink</h2>
     <p>
-      Vous vous êtes inscrit(e) sur finalprojectthp.herokuapp.com en utilisant l'e-mail suivant : <%= @practionner.email %>.
+      Votre rendez-vous aura lieu à <%= @appointment.lieu %> avec le patient <%= @patient.first_name %> <%= @patient.last_name %>.
     </p>
     <p>
       Pour accéder à votre espace client, connectez-vous via : <%= @url %>.
