@@ -9,4 +9,11 @@ class Patient < ApplicationRecord
 
   has_many :data_shows, dependent: :delete_all
   has_many :days, through: :data_shows
+
+  after_create :welcome_send
+
+  def welcome_send
+    PatientMailer.welcome_email(self).deliver_now
+  end
+
 end
