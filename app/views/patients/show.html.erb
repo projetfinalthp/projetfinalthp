@@ -5,3 +5,12 @@
 <br>
 
 <%= link_to "MES SOIGNANTS/MES RDVs", doctor_appointment_list_path %>
+
+<br>
+<br>
+<br>
+
+
+<% @patient_day.each do |data_per_day| %>
+	<%= data_per_day.mood %>
+<% end %>
