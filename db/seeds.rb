@@ -14,7 +14,7 @@ DataShow.destroy_all
 
 10.times do |practionner|
   Practionner.create(first_name: "Prénom#{practionner}",last_name: "Nom#{practionner}", 
-  	email: "email#{practionnEr}@example.com", password: "Password#{practionner}")
+  	email: "email#{practionner}@example.com", password: "Password#{practionner}")
   puts "10 praticiens ont été crées"
 end
 
