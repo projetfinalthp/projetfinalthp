@@ -12,19 +12,19 @@ Appointment.destroy_all
 Day.destroy_all
 DataShow.destroy_all
 
-10.times do |practionner|
+20.times do |practionner|
   Practionner.create(first_name: "Prénom#{practionner}",last_name: "Nom#{practionner}", 
   	email: "email#{practionner}@example.com", password: "Password#{practionner}")
   puts "10 praticiens ont été crées"
 end
 
-10.times do |patient|
+20.times do |patient|
   Patient.create(first_name: "Prénom#{patient}",last_name: "Nom#{patient}", 
   	email: "email#{patient}@example.com", password: "Password#{patient}")
   puts "10 patients ont été crées"
 end
 
-10.times do |appointment|
+100.times do |appointment|
   Appointment.create(date: "Date#{appointment}",lieu: "Lieu#{appointment}", 
   	patient_id: Patient.all.sample.id, practionner_id: Practionner.all.sample.id )
   puts "10 rendez-vous ont été crées"
@@ -36,7 +36,7 @@ end
   puts "10 jours ont été crées"
 end
 
-10.times do |datashow|
+100.times do |datashow|
   DataShow.create(patient_id: Patient.all.sample.id, day_id: Day.all.sample.id )
   puts "10 datashow ont été crées"
 end

@@ -5,3 +5,11 @@
 <br>
 
 <%= link_to "MES PATIENTS", patient_list_path %>
+
+<br>
+<br>
+<br>
+
+<% @patients_of_the_day.each do |patient_of_the_day| %>
+	<%= patient_of_the_day.first_name %>
+<% end %>
