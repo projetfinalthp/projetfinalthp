@@ -1,4 +1,7 @@
 <ul>
+  <li>
+    <h4>Docteur ?</h4>
+  </li>
   <% if practionner_signed_in? %>
     <li>
       <%= link_to "Sign out", destroy_practionner_session_path, method: :delete %>
@@ -19,6 +22,35 @@
 
     <li>
       <%= link_to "Sign up", new_practionner_registration_path %>
+    </li>
+
+  <% end %>
+</ul>
+
+<ul>
+  <li>
+    <h4>Patient ?</h4>
+  </li>
+  <% if patient_signed_in? %>
+    <li>
+      <%= link_to "Sign out", destroy_patient_session_path, method: :delete %>
+    </li>
+
+    <li>
+      Voici ton email : <%= current_patient.email %>
+    </li>
+
+    <li>
+      <%= link_to "Edit email / password", edit_patient_registration_path %>
+    </li>
+
+  <% else %>
+    <li>    
+      <%= link_to "Sign in", new_patient_session_path %>
+    </li>
+
+    <li>
+      <%= link_to "Sign up", new_patient_registration_path %>
     </li>
 
   <% end %>
