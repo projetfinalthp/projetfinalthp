@@ -7,7 +7,7 @@
     <h1>Bonjour <%= @patient.first_name %>!</h1>
     <h2>Vous venez de créer un nouveau rendez-vous sur Bipolink</h2>
     <p>
-      Votre rendez-vous aura lieu à <%= @appointment.lieu %> avec le praticien <%= @practionner.first_name %> <%= @practionner.last_name %>.
+      Votre rendez-vous aura lieu à <%= @appointment.lieu %>, le  <%= @appointment.date %>, avec le praticien <%= @practionner.first_name %> <%= @practionner.last_name %>.
     </p>
     <p>
       Pour accéder à votre espace client, connectez-vous via : <%= @url %>.
