@@ -1,0 +1,25 @@
+<ul>
+  <% if practionner_signed_in? %>
+    <li>
+      <%= link_to "Sign out", destroy_practionner_session_path, method: :delete %>
+    </li>
+
+    <li>
+      Voici ton email : <%= current_practionner.email %>
+    </li>
+
+    <li>
+      <%= link_to "Edit email / password", edit_practionner_registration_path %>
+    </li>
+
+  <% else %>
+    <li>    
+      <%= link_to "Sign in", new_practionner_session_path %>
+    </li>
+
+    <li>
+      <%= link_to "Sign up", new_practionner_registration_path %>
+    </li>
+
+  <% end %>
+</ul>
