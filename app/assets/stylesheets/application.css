@@ -47,7 +47,7 @@ p {
     padding-bottom: 25px;
     transition: padding-top .3s,padding-bottom .3s;
     border: none;
-    background-color: transparent;
+    background-color: #29ace2;
 }
 
 .page-section {
