@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 gem 'table_print'
 gem 'devise'
-gem 'mailjet'
+gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 gem 'dotenv'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
