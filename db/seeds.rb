@@ -25,13 +25,13 @@ end
 end
 
 10.times do |appointment|
-  Appointment.create(date: "2019-03-12",lieu: "Lieu#{appointment}", 
+  Appointment.create(date: DateTime.strptime("09/14/2009 8:00", "%m/%d/%Y %H:%M"),lieu: "Lieu#{appointment}", 
   	patient_id: Patient.all.sample.id, practionner_id: Practionner.all.sample.id )
   puts "10 rendez-vous ont été crées"
 end
 
 10.times do |day|
-  Day.create(date: "2019-03-12", hours_of_sleep: "Heures de sommeil#{day}",
+  Day.create(date: DateTime.strptime("09/14/2009 8:00", "%m/%d/%Y %H:%M"), hours_of_sleep: "Heures de sommeil#{day}",
   	mood: "Humeur#{day}", treatment: "Traitement#{day}")
   puts "10 jours ont été crées"
 end
