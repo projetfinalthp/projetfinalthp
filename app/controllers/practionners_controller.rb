@@ -1,4 +1,5 @@
 class PractionnersController < ApplicationController
+before_action :authenticate_user
 
   def index
   end
@@ -10,4 +11,13 @@ class PractionnersController < ApplicationController
   def edit
   end
   
+  private
+
+  def authenticate_user
+    unless current_practionner
+      flash[:danger] = "Please log in."
+      redirect_to new_practionner_session_path
+    end
+  end
+
 end
