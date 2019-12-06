@@ -1,0 +1,19 @@
+<h1>MES SOIGNANTS/MES RDVs</h1>
+
+<%= link_to "Revenir à PAGE DASHBOARD", patient_path(params[:id]) %>
+
+<br>
+<br>
+<br>
+<br>
+
+<% @patient_practionners.each do |practionner| %>
+	<%= practionner.first_name %>
+<% end %>
+
+<br>
+<br>
+
+<% @patient_appointments.each do |appointment| %>
+	<%= appointment.date %>
+<% end %>
