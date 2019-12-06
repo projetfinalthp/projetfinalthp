@@ -1,14 +1,12 @@
 <div class="container-login100">
   <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+    <div class="login100-form validate-form">
 
 
+    <h2 class="login100-form-title p-b-37">Inscription</h2>
 
-
-
-<h2>Inscription</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -27,12 +25,15 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+ <br>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+          <%= f.submit "Créer un compte", class: "login100-form-btn" %>
   </div>
-<% end %>
+      <% end %>
+      <br>
 
 <%= render "devise/shared/links" %>
+</div>
 </div>
 </div>
