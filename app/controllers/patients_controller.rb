@@ -11,7 +11,7 @@ before_action :authorize_user
   private
 
   def authorize_user 
-    @user = Patient.find(params[:id])
+    @user = Patient.find(session[:id])
     unless current_patient == @user
       flash[:danger] = "Please log in."
       redirect_to new_patient_session_path
@@ -19,3 +19,4 @@ before_action :authorize_user
   end
 
 end
+
