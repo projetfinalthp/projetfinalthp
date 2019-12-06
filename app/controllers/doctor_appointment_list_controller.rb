@@ -1,5 +1,5 @@
 class DoctorAppointmentListController < ApplicationController
-before_action :authenticate_user
+before_action :authorize_user
 
   def show
   	@patient_practionners = Patient.find(params[:id]).practionners
@@ -8,8 +8,9 @@ before_action :authenticate_user
 
   private
 
-  def authenticate_user
-    unless current_patient
+  def authorize_user 
+    @user = Patient.find(params[:id])
+    unless current_patient == @user
       flash[:danger] = "Please log in."
       redirect_to new_patient_session_path
     end

@@ -1,5 +1,5 @@
 class PractionnersController < ApplicationController
-before_action :authenticate_user
+before_action :authorize_user
 
   def index
   end
@@ -13,11 +13,13 @@ before_action :authenticate_user
   
   private
 
-  def authenticate_user
-    unless current_practionner
+	def authorize_user 
+    @user = Practionner.find(params[:id])
+    unless current_practionner == @user
       flash[:danger] = "Please log in."
       redirect_to new_practionner_session_path
     end
   end
 
 end
+
