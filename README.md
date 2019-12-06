@@ -1,24 +1,26 @@
-# README
+# BIPOLINK MVP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+L''application a pour but de récolter des données sur les patients bipolink, et leur donnent également la possibilité de prendre des rendez-vous avec leurs praticiens.
 
-Things you may want to cover:
+## Parcours Patients
 
-* Ruby version
+Le patient peut :
 
-* System dependencies
+* s'inscrire et se connecter à l'application
 
-* Configuration
+* se rendre sur son dashboard statique patients/:id
 
-* Database creation
+## Parcours Practiciens
 
-* Database initialization
+Le practicien peut :
 
-* How to run the test suite
+* s'inscrire et se connecter à l'application
 
-* Services (job queues, cache servers, search engines, etc.)
+* se rendre sur son dashboard statique practionners/:id
 
-* Deployment instructions
+### Heroku
 
-* ...
+lien : * https://finalprojectthp-staging.herokuapp.com/ *
+
+Pour accéder au dashboard patients/:id (le dernier id crée est 44)
+Pour accéder au dashboard practionners/:id 
