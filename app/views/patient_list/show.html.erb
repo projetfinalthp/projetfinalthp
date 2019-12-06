@@ -1,0 +1,10 @@
+<h1>MES PATIENTS</h1>
+
+<br>
+<br>
+<br>
+
+
+<% @practionner_patients.each do |patient| %>
+	<%= link_to patient.first_name, patient_path(patient.id) %>
+<% end %>
