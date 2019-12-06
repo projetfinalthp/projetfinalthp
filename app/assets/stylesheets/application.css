@@ -14,6 +14,84 @@
  *= require_self
  */
 
-p {
-  color: green;
+h1 {
+  color: #696969;
+  font-family: roboto;
 }
+
+h2 {
+  color: #696969;
+  font-family: roboto;
+}
+
+h3 {
+  color: #696969;
+  font-family: montserrat;
+}
+
+h4 {
+  color: #696969;
+  font-family: montserrat;
+}
+
+p {
+  color: #696969;
+  font-family: montserrat;
+}
+
+
+#mainNav {
+    transition: padding-top .3s,padding-bottom .3s;
+    border: none;
+    background-color: #29ace2;
+}
+
+#bipolink {
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #29ace2;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+
+.page-section {
+    padding: 100px 0;
+    margin-bottom: 50px;
+    color: #696969;
+
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+box-sizing: {
+	border-box;
+}
+
+.patient-practician {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #696969;
+    text-align: left;
+    background-color: #fff;
+}
+
+header.masthead {
+    text-align: center;
+    color: #696969;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+

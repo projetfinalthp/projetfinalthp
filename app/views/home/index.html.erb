@@ -1,57 +1,127 @@
-<ul>
-  <li>
-    <h4>Docteur ?</h4>
-  </li>
-  <% if practionner_signed_in? %>
-    <li>
-      <%= link_to "Sign out", destroy_practionner_session_path, method: :delete %>
-    </li>
+<nav class="navbar navbar-expand-lg navbar-dark " id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="mx-auto" src="https://i.goopics.net/PgPnd.png" alt=""></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#application">Application</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#bipolarity">La maladie</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <li>
-      Voici ton email : <%= current_practionner.email %>
-    </li>
 
-    <li>
-      <%= link_to "Edit email / password", edit_practionner_registration_path %>
-    </li>
+  <!-- portail de connexion -->
 
-  <% else %>
-    <li>    
-      <%= link_to "Sign in", new_practionner_session_path %>
-    </li>
+  <section class="page-section" id="bipolink">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">BipoLink</h2>
+          <h4 class="section-subheading">Application de suivi de la bipolarité</h4> <br>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-6">
+          <h4 class="section-heading"> Vous êtes</h4>
+          <h3 class="section-subheading">un patient</h3>
+          <img class="mx-auto rounded-circle" src="https://i.goopics.net/3KnvQ.png" alt=""><br><br>
+            <div class="text-center">
+              <button class="btn btn-light btn-xl text-uppercase js-scroll-trigger"> <%= link_to "connexion", new_patient_session_path %></button>
+              <p class="text-muted"><%= link_to "Pas encore inscrit ?", new_patient_registration_path %></p>
+             </div>
+        </div>
+        <div class="col-md-6">
+           	<h4 class="section-heading"> Vous êtes</h4>
+            <h3 class="section-subheading">un professionel de santé</h3>
+            <img class="mx-auto rounded-circle" src="https://i.goopics.net/nyPvX.png" alt=""><br><br>
+              <div class="text-center">
+              <button class="btn btn-light text-uppercase js-scroll-trigger"> <%= link_to "Connexion", new_practionner_session_path %></button>
+              <p class="text-muted"><%= link_to "Pas encore inscrit ?", new_practionner_registration_path %></p>
+			  </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <li>
-      <%= link_to "Sign up", new_practionner_registration_path %>
-    </li>
+  <!-- prez application -->
+  <section class="page-section" id="application">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="section-heading text-uppercase">BipoLink</h2> <br> <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+         <img class="mx-auto" src="https://i.goopics.net/w3vN3.png" alt="">
+        </div>
+        <div class="col-md-6">
+          <h3>Un suivi facile en quelques clics !</h3>
+          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p> <br> <br>
+          <h4>Télécharger l'application :</h4>
+          <div class="applications">
+            <a target="_blank" href="https://www.apple.com/fr/ios/app-store/">
+            <img class="appli" src="https://i.goopics.net/RZXQV.jpeg">
+            </a>
+            <a target="_blank" href="https://play.google.com/store?gl=FR&utm_source=emea_Med&utm_medium=hasem&utm_content=Oct2019&utm_campaign=Evergreen&pcampaignid=MKT-DR-emea-fr-1001280-Med-hasem-py-Evergreen-Oct2019-Text_Search_BKWS-test_exp_ISTest2%7cONSEM_kwid_43700048881599560&gref=EkQKPAoICIDyou8FEBsSLAAT9nM92TYq_hLPWGd2ihMm97sLLaxBKYlIT_fCogU1KyEJ-Kz4NWHzlpWeGgIrexAC8P8HARjj9tyaAw&gclid=CjwKCAiA8qLvBRAbEiwAE_ZzPdk2Kv4Sz1hndooTJve7Cy2sQSmJSE_3wqIFNSshCfis-DVh85aVnhoCK3sQAvD_BwE&gclsrc=aw.ds">
+            <img class="appli" src="https://i.goopics.net/ALYQo.jpeg">
+            </a>
+          </div>
 
-  <% end %>
-</ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<ul>
-  <li>
-    <h4>Patient ?</h4>
-  </li>
-  <% if patient_signed_in? %>
-    <li>
-      <%= link_to "Sign out", destroy_patient_session_path, method: :delete %>
-    </li>
+ <!-- la maladie -->
 
-    <li>
-      Voici ton email : <%= current_patient.email %>
-    </li>
+   <section class="bg-light page-section" id="bipolarity">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="section-heading text-uppercase">La bipolarité</h2> <br>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p> <br> <br>
+        </div>
+      </div>
+      <h2 class="section-heading text-uppercase">En quelques chiffres</h2> <br> <br> <br>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <h2>2800</h4>
+          <p class="text-muted">personnes en France</p>
+        </div>
+        <div class="col-md-4">
+          <h2>72%</h4>
+          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+        </div>
+        <div class="col-md-4">
+          <h2>5</h4>
+          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <li>
-      <%= link_to "Edit email / password", edit_patient_registration_path %>
-    </li>
 
-  <% else %>
-    <li>    
-      <%= link_to "Sign in", new_patient_session_path %>
-    </li>
 
-    <li>
-      <%= link_to "Sign up", new_patient_registration_path %>
-    </li>
 
-  <% end %>
-</ul>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <span class="copyright text-muted">Copyright &copy; Bipolink 2019</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
