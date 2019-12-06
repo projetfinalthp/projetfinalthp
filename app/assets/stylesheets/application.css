@@ -15,27 +15,22 @@
  */
 
 h1 {
-  color: #696969;
   font-family: roboto;
 }
 
 h2 {
-  color: #696969;
   font-family: roboto;
 }
 
 h3 {
-  color: #696969;
   font-family: montserrat;
 }
 
 h4 {
-  color: #696969;
   font-family: montserrat;
 }
 
 p {
-  color: #696969;
   font-family: montserrat;
 }
 
@@ -49,6 +44,7 @@ p {
 #bipolink {
     text-align: center;
     color: #FFFFFF;
+    padding: 50px 0;
     background-color: #29ace2;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -71,26 +67,8 @@ box-sizing: {
 	border-box;
 }
 
-.patient-practician {
-    text-align: center;
-}
 
-body {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #696969;
-    text-align: left;
-    background-color: #fff;
-}
 
-header.masthead {
-    text-align: center;
-    color: #696969;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    background-size: cover;
-}
+
+
 
