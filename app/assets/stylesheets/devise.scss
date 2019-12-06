@@ -152,7 +152,7 @@
   background-color: #ffc107;
   border-radius: 25px;
 
-  font-family: SourceSansPro-SemiBold;
+  font-family: Roboto-Bold;
   font-size: 14px;
   color: #696969;
   line-height: 1.4;
@@ -213,14 +213,14 @@
   padding: 0 45px 0 22px;
   pointer-events: none;
 
-  font-family: SourceSansPro-Bold;
+  font-family: Roboto-Bold;
   font-size: 16px;
   color: #fa4251;
   line-height: 1.2;
 }
 
 .btn-hide-validate {
-  font-family: Material-Design-Iconic-Font;
+  font-family: Roboto-Bold;
   font-size: 15px;
   color: #fa4251;
   cursor: pointer;
@@ -243,7 +243,7 @@
 
 .true-validate::after {
   content: "\f269";
-  font-family: Material-Design-Iconic-Font;
+  font-family: Roboto-Bold;
   font-size: 15px;
   color: #57b846;
   display: -webkit-box;
