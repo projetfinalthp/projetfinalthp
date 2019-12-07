@@ -1,10 +1,11 @@
-<div class="container-login100" style="background-image: url('jaime-serrano-ziDTXxEO_Vo-unsplash.jpg');">
+<div class="container-login100">
   <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-    <form class="login100-form validate-form">
-        <span class="login100-form-title p-b-37">
-          INSCRIPTION
-        </span>
-      <br>
+
+
+
+
+
+<h2>Inscription</h2>
 
   <div class="">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -38,5 +39,6 @@
 
   </div>
 
+<%= render "devise/shared/links" %>
 </div>
 </div>
