@@ -57,13 +57,11 @@
 
 <div id="content">
 
-
+<br>
 <h1>MON DASHBOARD</h1>
-<br>
-<br>
 <h4>Mes RDVs du jour</h4> <%= Time.now.strftime("%d/%m/%Y") %>
-<br>
-<br>
+<section class="page-section">
+<div class="mainbody container-fluid">
 <% @patients_of_the_day.each do |patient_of_the_day| %>
 <div class="card mb-3">
   <div class="card-body">
@@ -76,6 +74,10 @@
 
 
 </div>
+
+</div>
+</section>
+
 </body>
 
  <!-- jQuery CDN - Slim version (=without AJAX) -->
