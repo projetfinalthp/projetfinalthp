@@ -5,7 +5,8 @@ before_action :authorize_user
   end
 
   def show
-  	@patients_of_the_day = Practionner.find(params[:id]).patients
+    @patients_of_the_day = Practionner.find(params[:id]).patients
+    @patient_appointments_time = Appointment.find(params[:id]).date
   end
 
   def edit
