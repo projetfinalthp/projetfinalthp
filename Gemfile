@@ -9,6 +9,8 @@ gem 'devise'
 gem 'chartkick'
 # Gem to group data
 gem 'groupdate'
+# Gem Faker to create the seed
+gem 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'

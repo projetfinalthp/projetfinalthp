@@ -42,21 +42,20 @@
 # end
 
 # puts "le seed est fait !"
+ 
+@victorhugo = Patient.create(first_name: "Victor", last_name: "Hugo", email: "victorhugo@example.com", password: "azerty")
 
-
-  @victorhugo = Patient.create(first_name: "Victor", last_name: "Hugo", email: "victorhugo@example.com", password: "azerty")
+puts "Patient test for charts created, he will have ID number one, email: 'victorhugo@example.com', password: 'azerty'."
 
 25.times do |data_chart|
   time_count = 1
-  count_day = 67
+  count_day = 1
   count = Day.create(date: DateTime.strptime("#{time_count}/14/2009 8:00", "%m/%d/%Y %H:%M"), hours_of_sleep: "#{data_chart}",
-    mood: "Humeur#{data_chart}", treatment: "Traitement#{data_chart}")
+    mood: "Humeur#{data_chart}", treatment: "Traitement#{data_chart}", created_at: Faker::Date.between(from: 10.days.ago, to: Date.today))
   DataShow.create(patient_id: @victorhugo.id, day_id: count_day )
   time_count += 1
   count_day =+ 1
 end
-
-puts "Patient test for charts created, he will havecharts créé, il aura l'ID numéro 21 lors du premier Seed"
 
 
 
