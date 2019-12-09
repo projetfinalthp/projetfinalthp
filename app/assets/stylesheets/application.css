@@ -94,3 +94,11 @@ header.masthead {
     background-attachment: scroll;
     background-size: cover;
 }
+
+.card .card-body .message {
+  padding-left: 80px;
+  
+  &::after {
+    clear: both;
+  }
+}
