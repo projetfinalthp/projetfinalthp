@@ -3,17 +3,19 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Mes patients</title>
+		<link rel="stylesheet" href="side-navbar.css">
+
 	</head>
 	<body>
 		<h1>MES PATIENTS</h1>
 ​
-​				<% @practionner_patients.each do |patient| %>
 		<!-- alphabetical pagination -->
 		<div class="container">
-​
+
 		    <!-- contacts card -->
 		    <div class="card card-default" id="card_contacts">
-​
+​​​				<% @practionner_patients.each do |patient| %>
+
 		        <div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">
 ​
 								<ul class="list-group pull-down" id="contact-list">
@@ -27,23 +29,24 @@
 		                            <label class="name lead">	<%= link_to patient.first_name, patient_path(patient.id)%></label>
 		                            <br>
 		                            <span class="fa fa-map-marker fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="5842 Hillcrest Rd"></span>
-		                            <span class="text-muted">5842 Hillcrest Rd</span>
+		                            <span class="text-muted">La Félicita 75013 Paris</span>
 		                            <br>
 		                            <span class="fa fa-phone fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="(870) 288-4149"></span>
-		                            <span class="text-muted small">(870) 288-4149</span>
+		                            <span class="text-muted small">06 06 06 06 06</span>
 		                            <br>
 		                            <span class="fa fa-envelope fa-fw text-muted" data-toggle="tooltip" data-original-title="" title=""></span>
-		                            <span class="text-muted small text-truncate">mike.ana@example.com</span>
+		                            <span class="text-muted small text-truncate">patient@patient.com</span>
+																<br>
+																<a href="#" class="card-link float-right">Afficher plus de détails</a>
 		                        </div>
 		                    </div>
 		                </li>
 		            </ul>
 		            <!--/contacts list-->
 ​			       </div>
+​						<% end %>
 		    </div>
-
 		</div>
-		​			<% end %>
 
 	</body>
 </html>
