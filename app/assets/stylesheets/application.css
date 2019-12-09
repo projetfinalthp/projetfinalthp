@@ -51,6 +51,12 @@ p {
     background-size: cover;
 }
 
+#editprofile {
+    color: #696969;
+    padding: 50px 0;
+    font-family: montserrat;
+}
+
 
 .page-section {
     padding: 100px 0;
