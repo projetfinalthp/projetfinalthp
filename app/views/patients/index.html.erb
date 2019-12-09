@@ -3,4 +3,5 @@
 </h1>
 
 
-<%= link_to "Revenir à PAGE DASHBOARD", patient_path(@user.id) %>
+<%= link_to "Revenir à PAGE DASHBOARD", redirect_back(fallback_location: root_path) %>
+
