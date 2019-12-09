@@ -6,9 +6,17 @@
 <br>
 <br>
 <br>
-
 <% @patient_practionners.each do |practionner| %>
-	<%= practionner.first_name %>
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">	<%= practionner.first_name %></h5>
+    <p class="card-text">Spécialité : Psychiatre</p>
+    <a href="#" class="btn btn-primary">Voir plus</a>
+  </div>
+</div>
 <% end %>
 
 <br>
