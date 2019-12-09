@@ -24,7 +24,8 @@ puts "20 praticiens ont été crées"
   Patient.create(first_name: "Prénom#{patient}",last_name: "Nom#{patient}", 
     email: "email#{patient}@example.com", password: "Password#{patient}", 
     treatment: "Traitement#{patient}", city: "Ville#{patient}", sexe: "Sexe#{patient}",
-    birth: DateTime.strptime("09/14/1992 10:00", "%m/%d/%Y %H:%M"))
+    birth: DateTime.strptime("09/14/1992 10:00", "%m/%d/%Y %H:%M"), 
+    phone: "01 56 34 34 65")
 end
 puts "20 patients ont été crées"
 
