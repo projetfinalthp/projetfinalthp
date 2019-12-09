@@ -1,22 +1,16 @@
-<div class="container-login100">
-  <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-    <div class="login100-form validate-form">
-      <h2 class="login100-form-title p-b-37">Mot de passe oublié ?</h2>
+<h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <!-- <%= f.label :email %><br /> -->
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Votre adresse email"%>
-  </div> <br>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
 
   <div class="actions">
-    <%= f.submit "Réinitialiser votre mot de passe", class: "login100-form-btn" %>
-  </div><br>
+    <%= f.submit "Send me reset password instructions" %>
+  </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
-</div>
-</div>
-</div>
