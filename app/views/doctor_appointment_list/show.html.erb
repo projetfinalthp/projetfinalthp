@@ -66,24 +66,27 @@
 	<%= appointment.date %>
 <% end %>
 
-<% @patient_practionners.each do |practionner| %>
+
 <div class="container">
   <div class="row">
-		<div class="col-mb-5-mr-5">
-		<div class="card" style="width: 18rem;">
+  <% @patient_practionners.each do |practionner| %>
+		<div class="card mb-3 mr-3" style="width: 18rem;">
 			<div class="card-body">
-				 <img src="http://placehold.it/64x64" class="float-left rounded-circle"><div class="message">
-				 <h5 class="card-title"><%= practionner.first_name %></h5>
-				 <h6 class="card-subtitle mb-2 text-muted">Spécialité</h6>
+				 <img src="http://placehold.it/64x64" class="float-left rounded-circle"><div class="content">
+				 <h5 class="card-title">Dr. <%= practionner.first_name %> <%= practionner.last_name %></h5>
+				 <h6 class="card-subtitle mb-2 text-muted">Psychiatre</h6>
 				 <br>
 			</div>
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				<a href="#" class="card-link">voir plus</a>
+				<p class="card-text">Conventionné secteur 1</p>
+				<a href="#" class="card-link">Voir plus</a>
+				<a href="#" class="card-link">Prendre RDV</a>
 			</div>
 		</div>
+		<% end %>
     </div>
   </div>
-<% end %>
+
+
 
 </div>
 </body>
