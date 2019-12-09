@@ -6,13 +6,12 @@
 	</head>
 	<body>
 		<h1>MES PATIENTS</h1>
-
 		<% @practionner_patients.each do |patient| %>
-			<%= link_to patient.first_name, patient_path(patient.id) %>
-		<% end %>
+
 
 		<!-- alphabetical pagination -->
 		<div class="container">
+
 		    <!-- contacts card -->
 		    <div class="card card-default" id="card_contacts">
 
@@ -26,7 +25,7 @@
 		                        </div>
 		                        <div class="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 		                            <span class="fa fa-mobile fa-2x text-success float-right pulse" title="online now"></span>
-		                            <label class="name lead">Mike Anamendolla</label>
+		                            <label class="name lead">	<%= link_to patient.first_name, patient_path(patient.id) %></label>
 		                            <br>
 		                            <span class="fa fa-map-marker fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="5842 Hillcrest Rd"></span>
 		                            <span class="text-muted">5842 Hillcrest Rd</span>
@@ -60,9 +59,12 @@
 		                </li>
 		            </ul>
 		            <!--/contacts list-->
+
 		        </div>
 		    </div>
+
 		</div>
+		<% end %>
 
 
 
