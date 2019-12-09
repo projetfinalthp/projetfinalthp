@@ -2,7 +2,7 @@ class PatientsController < ApplicationController
 before_action :authorize_user, except: [:index]
 
   def index
-    @user == current_patient
+    
   end
 
   def show
@@ -23,3 +23,4 @@ before_action :authorize_user, except: [:index]
   end
 
 end
+

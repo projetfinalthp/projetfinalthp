@@ -1,7 +1,19 @@
 <h1>
-	PATIENT
+	MON PROFIL
 </h1>
 
+<% @id_user = current_patient.id %>
+<%= link_to "Dashbord", patient_path(@id_user) %>
 
-<%= link_to "Revenir à PAGE DASHBOARD", redirect_back(fallback_location: root_path) %>
+<br>
+<br>
+<%= current_patient.first_name %>
 
+<br>
+<br>
+<%= current_patient.last_name %>
+
+<br>
+<br>
+
+<%= link_to "Editer mon profil", edit_patient_path(@id_user) %>
