@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   devise_for :practionners
 
   resources :patients  do
-    resources :avatars, only: [:create]
+    resources :avatars_patient, only: [:create]
   end
-   
+
   resources :practionners
   resources :patient_list
   resources :doctor_appointment_list
