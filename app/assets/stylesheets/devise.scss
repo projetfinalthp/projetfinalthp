@@ -26,11 +26,9 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(41,172,226,0.5);
-  // background: -webkit-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));   POUR LE FOND DEGRADE
-  // background: -o-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
-  // background: -moz-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
-  // background: linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
+  // background: rgba(41,172,226,0.5);
+  background: rgb(9,9,121);
+  background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(41,172,226,1) 67%);
   pointer-events: none;
 }
 
@@ -149,7 +147,8 @@
   padding: 0 20px;
   min-width: 160px;
   height: 40px;
-  background-color: #29ace2;
+  background: rgb(9,9,121);
+  background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(41,172,226,1) 67%);
   border-radius: 20px;
 
   font-family: Roboto-Bold;
@@ -163,11 +162,6 @@
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 
-  box-shadow: 0 10px 30px 0px rgba(132, 198, 224, 0.5);
-  -moz-box-shadow: 0 10px 30px 0px rgba(132, 198, 224, 0.5);
-  -webkit-box-shadow: 0 10px 30px 0px rgba(132, 198, 224, 0.5);
-  -o-box-shadow: 0 10px 30px 0px rgba(132, 198, 224, 0.5);
-  -ms-box-shadow: 0 10px 30px 0px rgba(132, 198, 224, 0.5);
 }
 
 // .login100-form-btn:hover {
