@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+<<<<<<< HEAD
 # Practionner.destroy_all
 # Patient.destroy_all
 # Appointment.destroy_all
@@ -56,6 +57,7 @@ puts "Patient test for charts created, he will have ID number one, email: 'victo
   time_count += 1
   count_day =+ 1
 end
+puts "100 datashow ont été crées"
 
 
 

@@ -1,3 +1,17 @@
 // Place all the styles related to the PatientList controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: black;
+    background-clip: border-box;
+// border: 1px solid
+    // rgba(0,0,0,.125);
+    // border-radius: .25rem;
+}
