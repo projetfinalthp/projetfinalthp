@@ -30,7 +30,7 @@ end
 puts "20 patients ont été crées"
 
 100.times do |appointment|
-  Appointment.create(date: DateTime.strptime("09/14/2009 8:00", "%m/%d/%Y %H:%M"),lieu: "Lieu#{appointment}", 
+  Appointment.create(date: DateTime.strptime("09/14/2009 8:00", "%m/%d/%Y %H:%M"),place: "Lieu#{appointment}", 
     patient_id: Patient.all.sample.id, practionner_id: Practionner.all.sample.id )
 end
 puts "100 rendez-vous ont été crées"
