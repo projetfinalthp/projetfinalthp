@@ -26,6 +26,10 @@
 
     });
     </script> 
+
+	<script> 
+		$('.dropdown-toggle').dropdown()
+    </script> 
 <body>
 
  <!-- Page Content  -->
@@ -55,39 +59,63 @@
     </nav>
 
 </head>
-
+	
 <div id="content">
 
-<h1>MES SOIGNANTS/MES RDVs</h1>
+<nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+      <div class="container-fluid">
+        <!-- Brand -->
+        <a class="h4 mb-0 text-black text-uppercase d-none d-lg-inline-block" href="./index.html">Mes soignants</a>
+        <!-- User -->
+		<div class="dropdown">
+		<div class="media align-items-center">
+			<img src="https://i.redd.it/6onq25y0sh311.jpg" class="float-left rounded-circle avatar-sm">
+			<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Luke Skywalker
+			</button>
+		</div>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="#">Action</a>
+			<a class="dropdown-item" href="#">Another action</a>
+			<a class="dropdown-item" href="#">Something else here</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Separated link</a>
+			</div>
+		</div>
+      </div>
+    </nav>
+
+<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
 
 <br>
+<h5>Mes prochains rendez-vous</h5>
 
 <% @patient_appointments.each do |appointment| %>
 	<%= appointment.date %>
 <% end %>
 
-
+<h5>Mon équipe soignante</h5>
+<br>
 <div class="container">
   <div class="row">
   <% @patient_practionners.each do |practionner| %>
 		<div class="card mb-3 mr-3" style="width: 18rem;">
 			<div class="card-body">
-				 <img src="http://placehold.it/64x64" class="float-left rounded-circle"><div class="content">
+				 <img src="https://bit.ly/352vL1I" class="float-left rounded-circle avatar-md"><div class="content">
 				 <h5 class="card-title">Dr. <%= practionner.first_name %> <%= practionner.last_name %></h5>
 				 <h6 class="card-subtitle mb-2 text-muted">Psychiatre</h6>
 				 <br>
 			</div>
-				<p class="card-text">Conventionné secteur 1</p>
-				<a href="#" class="card-link">Voir plus</a>
+				<p class="card-text">Conventionné secteur 1
+				<br>Adresse</p>
+				<div class="card-link"><%= link_to "VOIR PLUS", practionner_path %></div>
 				<a href="#" class="card-link">Prendre RDV</a>
 			</div>
 		</div>
 		<% end %>
     </div>
   </div>
-
-
-
+</div>
 </div>
 </body>
 

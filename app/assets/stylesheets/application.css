@@ -104,7 +104,12 @@ header.masthead {
   font-size: 16px;
 }
 
-.card .card-body  {
+.card .card-body {
+  font-size: 14px;
+}
+
+
+.card-subtitle {
   font-size: 14px;
 }
 
@@ -122,4 +127,21 @@ header.masthead {
   width: 100px !important;
   font-size: 12px !important;
   line-height: 16px !important;
+}
+
+#navbar-main {
+  background-color: #FAFAFA;
+  width: 100%;
+}
+
+.avatar-sm {
+  width: 36px;
+  height: 36px;
+  font-size: .875rem;
+}
+
+.avatar-md {
+  width: 65px;
+  height: 65px;
+  font-size: .875rem;
 }
