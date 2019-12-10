@@ -12,15 +12,10 @@ class Patient < ApplicationRecord
 
   validates :first_name, presence: true, length: { minimum: 2 }
   validates :last_name, presence: true, length: { minimum: 2 }
-  validates :birth, 
-
-  validate :validate_age
+  validates :treatment, length: {maximum: 500}
 
 
-  def validate_age
-      if birth.present? && birth.to_datetime > 18.years.ago.to_datetime
-          errors.add(:birth, 'Vous devez être majeur')
-      end
-  end
+
+ 
 
 end
