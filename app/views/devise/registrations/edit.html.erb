@@ -3,6 +3,19 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  <%if @patient.avatar.attached?%>
+  <%= image_tag @patient.avatar, resize: "200x200!", class:"rounded-circle", alt: 'avatar' %>
+<%else%>
+ <%= image_tag gravatar_image_url(@patient.email, size: 200), class:"rounded-circle" %>
+
+<%end%>
+
+<h3>Changer d'avatar ?</h3>
+<%= form_tag patient_avatars_patient_index_path(@patient), multipart: true do %>
+  <%= file_field_tag :avatar %>
+  <%= submit_tag "mettre à jour" %>
+<% end %>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
