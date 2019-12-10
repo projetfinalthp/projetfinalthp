@@ -15,27 +15,33 @@
  */
 
 h1 {
+
   font-family: roboto;
 }
 
 h2 {
+
   font-family: roboto;
 }
 
 h3 {
+
   font-family: montserrat;
 }
 
 h4 {
+
   font-family: montserrat;
 }
 
 p {
+
   font-family: montserrat;
 }
 
 
 #mainNav {
+
     transition: padding-top .3s,padding-bottom .3s;
     border: none;
     background-color: #29ace2;
@@ -50,6 +56,7 @@ p {
     background-attachment: scroll;
     background-size: cover;
 }
+
 
 #editprofile {
     color: #696969;
@@ -71,4 +78,55 @@ p {
 
 
 
+
+.card .card-body .content {
+  padding-left: 80px;
+}
+
+.card-title {
+  color: #29ace2; 
+  font-size: 16px;
+}
+
+.card .card-body {
+  font-size: 14px;
+}
+
+
+.card-subtitle {
+  font-size: 14px;
+}
+
+.card-link  {
+  border-radius: 4px !important;
+  color: #FFFFFF !important;
+  display: inline-block !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  background-color: #29ace2 !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  width: 100px !important;
+  font-size: 12px !important;
+  line-height: 16px !important;
+}
+
+#navbar-main {
+  background-color: #FAFAFA;
+  width: 100%;
+}
+
+.avatar-sm {
+  width: 36px;
+  height: 36px;
+  font-size: .875rem;
+}
+
+.avatar-md {
+  width: 65px;
+  height: 65px;
+  font-size: .875rem;
+}
 
