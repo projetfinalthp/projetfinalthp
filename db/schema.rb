@@ -55,9 +55,10 @@ ActiveRecord::Schema.define(version: 2019_12_09_152801) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.text "treatment"
-    t.string "ville"
+    t.string "city"
     t.string "sexe"
     t.datetime "birth"
+    t.string "phone"
     t.index ["email"], name: "index_patients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
   end

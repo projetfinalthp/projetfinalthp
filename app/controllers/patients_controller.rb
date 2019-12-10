@@ -1,5 +1,9 @@
 class PatientsController < ApplicationController
-before_action :authorize_user
+before_action :authorize_user, except: [:index]
+
+  def index
+    
+  end
 
   def show
   	@patient_day = Patient.find(params[:id]).days
@@ -19,3 +23,4 @@ before_action :authorize_user
   end
 
 end
+
