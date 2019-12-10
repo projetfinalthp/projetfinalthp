@@ -22,6 +22,11 @@
     color: white;
 }
 
+.logo-size {
+    width: 200px;
+    height: 200px;
+    font-size: .875rem;
+}
 
 /* Toggling the sidebar header content, hide the big heading [h3] and showing the small heading [strong] and vice versa*/
 #sidebar .sidebar-header strong {
