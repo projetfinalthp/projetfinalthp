@@ -2,11 +2,29 @@
 	MON PROFIL
 </h1>
 
+<p>Bienvenue sur votre page profil <%= current_practionner.first_name%> !</p>
+
+
+<h3>Photo de profil actuel</h3>
+<%if current_practionner.avatar.attached?%>
+  <%= image_tag current_practionner.avatar, resize: "200x200!", class:"rounded-circle", alt: 'avatar' %>
+<%else%>
+ <%= image_tag gravatar_image_url(@patient.email, size: 200), class:"rounded-circle" %>
+
+<%end%>
+
+<h3>Changer d'avatar ?</h3>
+<%= form_tag practionner_avatars_practionner_index_path(@practionner), multipart: true do %>
+  <%= file_field_tag :avatar %>
+  <%= submit_tag "mettre à jour" %>
+<% end %>
+<br>
+
 <br>
 <br>
 
 <% @id_user = current_practionner.id %>
-<%= link_to "Dashbord", practionner_path(@id_user) %>
+<%= link_to "Dashboard", practionner_path(@id_user) %>
 
 <br>
 <br>
