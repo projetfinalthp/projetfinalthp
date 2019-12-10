@@ -7,11 +7,15 @@
     <title>Mes soignants</title>
     <!-- Bootstrap CSS CDN -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Font Awesome JS -->
+    
+	<!-- Our CSS CDN -->
+	<link href="side-navbar.css" rel="stylesheet">
+
+	 <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/732403f21f.js" crossorigin="anonymous"></script>
+	<!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <!-- My CSS -->
-    <link rel="stylesheet" href="side-navbar.css">
     <script>
       $(document).ready(function () {
       
@@ -25,6 +29,13 @@
       $('.dropdown-toggle').dropdown()
     </script>
 
+	 <script>$(document).ready(function(){
+	$('#nav-icon3').click(function(){
+		$(this).toggleClass('open');
+		});
+	});
+	</script>
+
       </head>
 	<body>
     
@@ -36,13 +47,26 @@
 			</div>
 			<ul class="list-group">
 				<li>
-				<button type="button" id="sidebarCollapse" class="btn btn-info">
-					<i class="fas fa-align-left"></i>
-				</button>
-				<div id="navbar-text-color"><%= link_to "MON DASHBOARD", patient_path(params[:id]) %></div>
-				<%= link_to "MES PATIENTS", root_path %>
-				<%= link_to "MON PROFIL", root_path %>
-				<%= link_to "MES RDVs", root_path %>
+				<div id="sidebarCollapse"><div id="nav-icon3" id="sidebarCollapse">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div></div>
+				<div class="navbar-text-color">
+				<div class="media align-items-center">
+				<i class="far fa-chart-bar"></i><%= link_to "MON DASHBOARD", patient_path(params[:id]) %>
+				</div>
+				<div class="media align-items-center">
+				<i class="fas fa-users"></i><%= link_to "MES PATIENTS", root_path %>
+				</div>
+				<div class="media align-items-center">
+				<i class="fas fa-user-md"></i><%= link_to "MON PROFIL", root_path %>
+				</div>
+				<div class="media align-items-center">
+				<i class="fas fa-calendar-plus"></i><%= link_to "MES RDVs", root_path %>
+				</div>
+				</div>
 				</li>
 			</ul>
 			</nav>
@@ -70,6 +94,7 @@
 	    <br>
         <div class="container-fluid">
           <h5>Mes prochains rendez-vous</h5>
+		  
           <div class="container-fluid">
             <div class="row">
               <% @patient_appointments.each do |appointment| %>
