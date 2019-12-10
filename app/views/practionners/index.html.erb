@@ -7,14 +7,14 @@
 
 <h3>Photo de profil actuel</h3>
 <%if current_practionner.avatar.attached?%>
-  <%= image_tag current_practionner.avatar, resize: "200x200!", class:"rounded-circle", alt: 'avatar' %>
+  <%= image_tag current_practionner.avatar, size: 100, class:"rounded-circle", alt: 'avatar' %>
 <%else%>
- <%= image_tag gravatar_image_url(@patient.email, size: 200), class:"rounded-circle" %>
+ <%= image_tag gravatar_image_url(current_practionner.email, size: 100), class:"rounded-circle" %>
 
 <%end%>
 
 <h3>Changer d'avatar ?</h3>
-<%= form_tag practionner_avatars_practionner_index_path(@practionner), multipart: true do %>
+<%= form_tag practionner_avatars_practionner_index_path(current_practionner), multipart: true do %>
   <%= file_field_tag :avatar %>
   <%= submit_tag "mettre à jour" %>
 <% end %>
