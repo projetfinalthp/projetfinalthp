@@ -5,9 +5,9 @@
 
 <h3>Photo de profil actuel</h3>
 <%if @patient.avatar.attached?%>
-  <%= image_tag @patient.avatar, resize: "200x200!", class:"rounded-circle", alt: 'avatar' %>
+  <%= image_tag @patient.avatar, size: 100, class:"rounded-circle", alt: 'avatar' %>
 <%else%>
- <%= image_tag gravatar_image_url(@patient.email, size: 200), class:"rounded-circle" %>
+ <%= image_tag gravatar_image_url(@patient.email, size: 100), class:"rounded-circle" %>
 
 <%end%>
 
