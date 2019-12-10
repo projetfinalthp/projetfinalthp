@@ -6,6 +6,7 @@ gem 'table_print'
 gem 'devise'
 
 gem "letter_opener", :group => :development
+gem 'gravatar_image_tag'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
