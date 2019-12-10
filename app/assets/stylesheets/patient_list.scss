@@ -9,11 +9,9 @@
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: black;
+    background-color: #fff;
     background-clip: border-box;
-// border: 1px solid
-    // rgba(0,0,0,.125);
-    // border-radius: .25rem;
+
 }
 
 .card-link  {
@@ -30,4 +28,18 @@
   width: 130px !important;
   font-size: 12px !important;
   line-height: 16px !important;
+}
+
+hr.accent {
+    border-color:
+    #fcf113;
+    opacity: 1;
+}
+
+hr {
+    max-width: 150px;
+    border-width: 5px;
+    opacity: 0.08;
+    margin-top: 15px;
+    margin-bottom: 25px;
 }

@@ -3,22 +3,20 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Mes patients</title>
-		<link rel="stylesheet" href="side-navbar.css">
-
+		<!-- <link rel="stylesheet" href="side-navbar.css"> -->
+		<script src="https://kit.fontawesome.com/e398dbe560.js" crossorigin="anonymous"></script>
 	</head>
+
 	<body>
-		<h1>Mes patients</h1>
+		<h2 class="text-center">Mes patients</h2>
+		<hr class="accent mb-3">
 		<%= link_to "Revenir à PAGE DASHBOARD", practionner_path(params[:id]) %>
-
-​
 		<!-- alphabetical pagination -->
-		<div class="container">
 
+		<div class="container">
 		    <!-- contacts card -->
-		    <div class="card card-default" id="card_contacts">
 ​			<% @practionner_patients.each do |patient| %>
 		        <div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">
-
 								<ul class="list-group pull-down" id="contact-list">
 		                <li class="list-group-item">
 		                    <div class="row w-100">
@@ -26,7 +24,6 @@
 		                            <img src="http://demos.themes.guide/bodeo/assets/images/users/m101.jpg" alt="Mike Anamendolla" class="rounded-circle mx-auto d-block img-fluid">
 		                        </div>
 		                        <div class="col-12 col-sm-6 col-md-9 text-center text-sm-left">
-		                            <span class="fa fa-mobile fa-2x text-success float-right pulse" title="online now"></span>
 																<label class="name lead">	<%= patient.first_name %> <%= patient.last_name%> </label>
 																<br>
 		                            <span class="fa fa-map-marker fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="5842 Hillcrest Rd"></span>
@@ -46,7 +43,6 @@
 		            <!--/contacts list-->
 ​			       </div>
 ​						<% end %>
-		    </div>
 		</div>
 
 	</body>
