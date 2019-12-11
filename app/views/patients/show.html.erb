@@ -9,6 +9,8 @@
 <br>
 <br>
 <br>
+<br>
+
 <h4>
 	Patient mood
 </h4>
@@ -19,18 +21,3 @@
 	Patient hours of sleep
 </h4>
 <%= line_chart @patient_day.group_by_day(:created_at).sum(:hours_of_sleep) %>
-
-<br> 
-
-
-
-<% @patient_day.each do |data_per_day| %>
-	<%= data_per_day.hours_of_sleep %>
-<% end %>
-
-<br> 
-
-<% @patient_day.each do |data_per_day| %>
-	<%= data_per_day.mood %>
-<% end %>
-

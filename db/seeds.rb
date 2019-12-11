@@ -6,71 +6,52 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Practionner.destroy_all
-# Patient.destroy_all
-# Appointment.destroy_all
-# Day.destroy_all
-# DataShow.destroy_all
+Practionner.destroy_all
+Patient.destroy_all
+Appointment.destroy_all
+Day.destroy_all
+DataShow.destroy_all
 
-# 20.times do |practionner|
-#   Practionner.create(first_name: "Prénom#{practionner}",last_name: "Nom#{practionner}", 
-#     email: "email#{practionner}@example.com", password: "Password#{practionner}")
-#   puts "10 praticiens ont été crées"
-# end
-
-# 20.times do |patient|
-#   Patient.create(first_name: "Prénom#{patient}",last_name: "Nom#{patient}", 
-#     email: "email#{patient}@example.com", password: "Password#{patient}")
-#   puts "10 patients ont été crées"
-# end
-
-# 100.times do |appointment|
-#   Appointment.create(date: DateTime.strptime("09/14/2009 8:00", "%m/%d/%Y %H:%M"),lieu: "Lieu#{appointment}", 
-#     patient_id: Patient.all.sample.id, practionner_id: Practionner.all.sample.id )
-#   puts "10 rendez-vous ont été crées"
-# end
-
-# 10.times do |day|
-#   Day.create(date: DateTime.strptime("09/14/2009 8:00", "%m/%d/%Y %H:%M"), hours_of_sleep: "Heures de sommeil#{day}",
-#     mood: "Humeur#{day}", treatment: "Traitement#{day}")
-#   puts "10 jours ont été crées"
-# end
-
-# 100.times do |datashow|
-#   DataShow.create(patient_id: Patient.all.sample.id, day_id: Day.all.sample.id )
-#   puts "10 datashow ont été crées"
-# end
-
-# puts "le seed est fait !"
  
-# @victorhugo = Patient.create(first_name: "Victor", last_name: "Hugo", email: "victorhugo@example.com", password: "azerty")
+10.times do |user|
 
-# puts "Patient test for charts created, he will have ID number 1, email: 'victorhugo@example.com', password: 'azerty'."
+  @patient = Patient.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name , email: "patient#{user}@yopmail.com", password: "azerty", sexe: Faker::Gender.binary_type, treatment: Faker::Science.element, birth: Faker::Date.birthday(min_age: 18, max_age: 65), phone: Faker::PhoneNumber.phone_number, city: Faker::Address.city )
+  count_day = 1
 
-# 25.times do |data_chart|
-#   time_count = 1
-#   count_day = 1
-#   count = Day.create(date: DateTime.strptime("#{time_count}/14/2009 8:00", "%m/%d/%Y %H:%M"), hours_of_sleep: "#{data_chart}",
-#     mood: "Humeur#{data_chart}", treatment: "Traitement#{data_chart}", created_at: Faker::Date.between(from: 10.days.ago, to: Date.today))
-#   DataShow.create(patient_id: @victorhugo.id, day_id: count_day )
-#   time_count += 1
-#   count_day =+ 1
-# end
-# puts "100 datashow ont été crées"
+  25.times do |data_chart|
+    Day.create(date: Faker::Date.between(from: 10.days.ago, to: Date.today), hours_of_sleep: rand(3..7),
+      mood: rand(1..9), created_at: DateTime.new(2015, 6, count_day))
+    DataShow.create(patient_id: @patient.id, day_id: count_day)
+    count_day += 1
+  end
+  puts "One patient and 25 associated days have been created. The patient email : patient#{user}@yopmail.com. The password : azerty."
 
-@frankherbert = Patient.create(first_name: "Frank", last_name: "Herbert", email: "frankherbert@example.com", password: "azerty")
+  @practionner = Practionner.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name , email: "practionner#{user}@yopmail.com", password: "azerty", sexe: Faker::Gender.binary_type, specialty: Faker::Educator.subject, adress: Faker::Address.full_address, diploma: Faker::Educator.degree)
 
-puts "Patient test for charts created, he will have ID number 1, email: 'frankherbert@example.com', password: 'azerty'."
+  5.times do |appointment|
+    Appointment.create(date: Faker::Date.between(from: 10.days.ago, to: Date.today), place: Faker::Address.city, 
+    patient_id: Patient.all.sample.id, practionner_id: @practionner.id )
+  end
+  puts "One practionner and 5 associated appointments have been created. The practionner email : practionner#{user}@yopmail.com. The password : azerty."
 
-count_day = 1
-
-25.times do |data_chart|
-  Day.create(date: Faker::Date.between(from: 10.days.ago, to: Date.today), hours_of_sleep: rand(3..7),
-    mood: rand(1..9), treatment: "Traitement#{data_chart}", created_at: DateTime.new(2015, 6, count_day))
-  DataShow.create(patient_id: @frankherbert.id, day_id: count_day)
-  count_day += 1
 end
-puts "25 datashow ont été crées"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
