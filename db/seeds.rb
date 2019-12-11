@@ -47,4 +47,3 @@ end
 puts "100 datashow ont été crées"
 
 puts "le seed est fait !"
-

@@ -14,7 +14,10 @@
  *= require_self
  */
 
+/* ################################################ CSS de la typo ################################################ */
+
 h1 {
+  color: #696969;
   font-family: roboto;
 }
 
@@ -68,7 +71,4 @@ p {
 .text-center {
     text-align: center!important;
 }
-
-
-
 
