@@ -10,9 +10,23 @@ before_action :authorize_user, except: [:index]
   end
 
   def edit
+    @patient = Patient.find(params[:id])
+  end
+
+  def update
+    @patient = Patient.find(params[:id])
+    if @patient = Patient.update(patient_params)
+    redirect_to edit_patient_path
+    else
+    render 'edit'
+    end 
   end
 
   private
+
+  def patient_params
+    params.require(:patient).permit(:first_name,:last_name, :treatment, :city, :birth, :sexe)
+  end
 
   def authorize_user 
     @user = Patient.find(params[:id])
