@@ -7,4 +7,5 @@ module ApplicationHelper
 			gravatar_image_url(resource.email)
 		end
 	end
+
 end
