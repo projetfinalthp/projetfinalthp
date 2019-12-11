@@ -220,13 +220,20 @@ ul ul a {
     display: flex;
     align-items: center;
 }
+
+.icon-perso {
+   margin-right: 20px;
+}
   /* Icon  3*/
   
  #nav-icon3 {
     width: 30px;
     height: 10px;
     position: relative;
-    margin: 50px auto;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -296,4 +303,3 @@ ul ul a {
     width: 0%;
     left: 50%;
   }
-  
