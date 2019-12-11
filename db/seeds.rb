@@ -43,38 +43,34 @@
 
 # puts "le seed est fait !"
  
-@victorhugo = Patient.create(first_name: "Victor", last_name: "Hugo", email: "victorhugo@example.com", password: "azerty")
+# @victorhugo = Patient.create(first_name: "Victor", last_name: "Hugo", email: "victorhugo@example.com", password: "azerty")
 
-puts "Patient test for charts created, he will have ID number 1, email: 'victorhugo@example.com', password: 'azerty'."
+# puts "Patient test for charts created, he will have ID number 1, email: 'victorhugo@example.com', password: 'azerty'."
 
-25.times do |data_chart|
-  time_count = 1
-  count_day = 1
-  count = Day.create(date: DateTime.strptime("#{time_count}/14/2009 8:00", "%m/%d/%Y %H:%M"), hours_of_sleep: "#{data_chart}",
-    mood: "Humeur#{data_chart}", treatment: "Traitement#{data_chart}", created_at: Faker::Date.between(from: 10.days.ago, to: Date.today))
-  DataShow.create(patient_id: @victorhugo.id, day_id: count_day )
-  time_count += 1
-  count_day =+ 1
-end
-puts "100 datashow ont été crées"
+# 25.times do |data_chart|
+#   time_count = 1
+#   count_day = 1
+#   count = Day.create(date: DateTime.strptime("#{time_count}/14/2009 8:00", "%m/%d/%Y %H:%M"), hours_of_sleep: "#{data_chart}",
+#     mood: "Humeur#{data_chart}", treatment: "Traitement#{data_chart}", created_at: Faker::Date.between(from: 10.days.ago, to: Date.today))
+#   DataShow.create(patient_id: @victorhugo.id, day_id: count_day )
+#   time_count += 1
+#   count_day =+ 1
+# end
+# puts "100 datashow ont été crées"
 
 @frankherbert = Patient.create(first_name: "Frank", last_name: "Herbert", email: "frankherbert@example.com", password: "azerty")
 
-puts "Patient test for charts created, he will have ID number 2, email: 'frankherbert@example.com', password: 'azerty'."
+puts "Patient test for charts created, he will have ID number 1, email: 'frankherbert@example.com', password: 'azerty'."
+
+count_day = 1
 
 25.times do |data_chart|
-  time_count = 1
-  count_day = 1
-  count = Day.create(date: DateTime.strptime("#{time_count}/14/2009 8:00", "%m/%d/%Y %H:%M"), hours_of_sleep: "#{rand(0..7)}",
-    mood: "#{rand(0..10)}", treatment: "Traitement#{data_chart}", created_at: Faker::Date.between(from: 10.days.ago, to: Date.today))
-  DataShow.create(patient_id: @frankherbert.id, day_id: count_day )
-  time_count += 1
-  count_day =+ 1
+  Day.create(date: Faker::Date.between(from: 10.days.ago, to: Date.today), hours_of_sleep: rand(3..7),
+    mood: rand(1..9), treatment: "Traitement#{data_chart}", created_at: DateTime.new(2015, 6, count_day))
+  DataShow.create(patient_id: @frankherbert.id, day_id: count_day)
+  count_day += 1
 end
-puts "100 datashow ont été crées"
-
-
-
+puts "25 datashow ont été crées"
 
 
 
