@@ -63,6 +63,64 @@
 
 </head>
 
+
+
+<h3> FORM </h3>
+<% if @practionner.errors.any? %>
+<p>Erreurs lors de la modifications : </p>
+<ul>
+<% @practionner.errors.full_messages.each do |message| %>
+<li> <%= message %> </li>
+<% end %>
+</ul>
+<% end %>
+
+<%= form_for @practionner do |f| %>
+<p>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+</p>
+
+<p>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+</p>
+
+<p>
+    <%= f.label :sexe %>
+    <%= f.text_field :sexe %>
+</p>
+
+<p>
+    <%= f.label :specialty %>
+    <%= f.text_area :specialty %>
+</p>
+
+<p>
+    <%= f.label :diploma %>
+    <%= f.text_area :diploma %>
+</p>
+
+<p>
+    <%= f.label :certifications %>
+    <%= f.text_area :certifications %>
+</p>
+
+<p>
+    <%= f.label :adress %>
+    <%= f.text_field :adress %>
+</p>
+
+<p>
+    <%= f.submit "Mettre à jour" %>
+</p>
+<% end %>
+
+
+
+
+
+
 <div id="content">
 
 <section class="page-section">
