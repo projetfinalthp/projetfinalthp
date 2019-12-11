@@ -14,7 +14,7 @@
 <h4>
 	Patient mood
 </h4>
-<%= line_chart @patient_day.group_by_day(:created_at).maximum(:mood) %>
+<%= line_chart @patient_day.group_by_day(:created_at).sum(:mood) %>
 
 <br> 
 <h4>
