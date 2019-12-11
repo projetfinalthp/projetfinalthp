@@ -15,16 +15,12 @@
           </li>
            <li class="nav-item">
             <%if patient_signed_in? %>
-            <%= image_tag current_patient_avatar(current_patient), size: 50, class:"rounded-circle" %>
-            <% else %>
-             <a class="nav-link js-scroll-trigger" href="#connexion">Connexion</a>
+            <%= image_tag current_patient_avatar(current_patient), size: 50, class:"rounded-circle"%>
             <% end %>
           </li>
              <li class="nav-item">
             <%if practionner_signed_in? %>
-            <%= image_tag current_practionner_avatar(current_practionner), size: 50, class:"rounded-circle" %>
-            <% else %>
-             <a class="nav-link js-scroll-trigger" href="#connexion">Connexion</a>
+            <%= image_tag current_practionner_avatar(current_practionner), size: 50, class:"rounded-circle"%>
             <% end %>
           </li>
         </ul>
