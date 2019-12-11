@@ -6,11 +6,7 @@
   <div class="form-group">
   <div class="row">
   <div class="col-sm-4">
-  <%if resource.avatar.attached?%>
-  <%= image_tag resource.avatar, size: 100, class:"rounded-circle", alt: 'avatar' %>
-<%else%>
- <%= image_tag gravatar_image_url(resource.email, size: 100), class:"rounded-circle" %>
-<%end%>
+  <%= image_tag resource_avatar, size: 100, class:"rounded-circle" %>
 </div>
 
   <div class="col-sm-8">
