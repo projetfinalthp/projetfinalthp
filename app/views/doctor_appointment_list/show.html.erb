@@ -54,9 +54,9 @@
 					<a class="h4 mb-0 text-black text-uppercase d-none d-lg-inline-block" href="./index.html">Mes soignants</a>
 					<!-- User -->
 					<div class="dropdown">
-						<img src="https://i.redd.it/6onq25y0sh311.jpg" class="float-left rounded-circle avatar-sm">
+						<%= image_tag current_patient_avatar(current_patient), size: 30, class:"rounded-circle"%>
 						<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Luke Skywalker
+							 <%= current_patient.first_name%> <%=current_patient.last_name %>
 						</button>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="#">Mon profil</a>
