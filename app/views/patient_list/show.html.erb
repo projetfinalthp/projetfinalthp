@@ -9,17 +9,60 @@
 	</head>
 
 	<body>
+
 		<h2 class="text-center">Mes patients</h2>
 		<hr class="accent mb-3">
-		<%= link_to "Home", practionner_path(params[:id]) %>
+		<%= link_to  "Home", practionner_path(params[:id]), class: 'link_color-patient_list' %>
 
+		<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="searchbar">
+				<input class="search_input" type="text" name="" placeholder="Rechercher ...">
+				<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+			</div>
+		</div>
+	</div> <br><br>
+		<!-- ########## BARRE DE RECHERCHE A INTEGRER AVEC DU JS ############## -->
+		<!-- <div class="container">
+		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 
-		<!-- alphabetical pagination -->
+		<ul id="myUL">
+ 			<li><a href="#">Adele</a></li>
+ 			<li><a href="#">Agnes</a></li>
+
+ 			<li><a href="#">Billy</a></li>
+ 			<li><a href="#">Bob</a></li>
+
+ 			<li><a href="#">Calvin</a></li>
+ 			<li><a href="#">Christina</a></li>
+		 	<li><a href="#">Cindy</a></li>
+		</ul>
+
+		<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+	</div> -->
+	<!-- ########## BARRE DE RECHERCHE A INTEGRER AVEC DU JS ############## -->
 
 
 		<div class="container">
 		    <!-- contacts card -->
-​			<% @practionner_patients.each do |patient| %>
+				<% @practionner_patients.each do |patient| %>
 		        <div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">
 								<ul class="list-group pull-down" id="contact-list">
 		                <li class="list-group-item">
