@@ -36,6 +36,7 @@
 	});
 	</script>
 
+
       </head>
 	<body>
     
@@ -56,19 +57,19 @@
 				<div class="navbar-text-color">
 				<div class="nav-link">
 				<div class="media align-items-center">
-				<i class="fas fa-chart-bar fa-2x icon-perso"></i><%= link_to "Mon dashboard", patient_path(params[:id]) %>
+			  <i class="fas fa-chart-bar fa-2x icon-perso"></i><%= link_to "Mon dashboard", patient_path(params[:id]), class: 'link_color-sidebar' %>
 				</div></div>
 				<div class="nav-link">
 				<div class="media align-items-center">
-				<i class="fas fa-users fa-2x icon-perso"></i><%= link_to "Mes patients", root_path %>
+				<i class="fas fa-users fa-2x icon-perso"></i><%= link_to "Mes patients", root_path, class: 'link_color-sidebar' %>
 				</div></div>
 				<div class="nav-link">
 				<div class="media align-items-center">
-				<i class="fas fa-user-md fa-2x icon-perso"></i><%= link_to "Mon profil", root_path %>
+				<i class="fas fa-user-md fa-2x icon-perso"></i><%= link_to "Mon profil", root_path, class: 'link_color-sidebar' %>
 				</div></div>
 				<div class="nav-link">
 				<div class="media align-items-center">
-				<i class="fas fa-calendar-plus fa-2x icon-perso"></i><%= link_to "Mes rendez-vous", root_path %>
+				<i class="fas fa-calendar-plus fa-2x icon-perso"></i><%= link_to "Mes rendez-vous", root_path, class: 'link_color-sidebar' %>
 				</div></div>
 				</div>
 				</li>
@@ -98,7 +99,9 @@
 	    <br>
         <div class="container-fluid">
           <h5>Mes prochains rendez-vous</h5>
-		  
+
+
+
           <div class="container-fluid">
             <div class="row">
               <% @patient_appointments.each do |appointment| %>
@@ -122,6 +125,9 @@
             </div>
           </div>
         </div>
+
+
+
 
         <div class="container">
           <h5>Mon équipe soignante</h5>
