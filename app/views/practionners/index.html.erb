@@ -6,11 +6,9 @@
 
 
 <h3>Photo de profil actuel</h3>
-<%if current_practionner.avatar.attached?%>
-  <%= image_tag current_practionner.avatar, size: 100, class:"rounded-circle" %>
-<%else%>
- <%= image_tag gravatar_image_url(current_practionner.email, size: 100), class:"rounded-circle" %>
-<%end%>
+<div>
+ <%= image_tag current_practionner_avatar(current_practionner), size: 100, class:"rounded-circle" %>
+</div>
 
 <h3>Changer d'avatar ?</h3>
 <%= form_tag practionner_avatars_practionner_index_path(current_practionner), multipart: true do %>
