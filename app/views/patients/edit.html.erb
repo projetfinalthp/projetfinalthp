@@ -62,8 +62,64 @@
 
 </head>
 
-<div id="content">
 
+<h3> FORM </h3>
+<% if @patient.errors.any? %>
+<p>Erreurs lors de la modifications : </p>
+<ul>
+<% @patient.errors.full_messages.each do |message| %>
+<li> <%= message %> </li>
+<% end %>
+</ul>
+<% end %>
+
+<%= form_for @patient do |f| %>
+<p>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+</p>
+
+<p>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+</p>
+
+<p>
+    <%= f.label :treatment %>
+    <%= f.text_area :treatment %>
+</p>
+
+<p>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+</p>
+
+<p>
+    <%= f.label :birth %>
+    <%= f.datetime_field :birth %>
+</p>
+
+<p>
+    <%= f.submit "Mettre à jour" %>
+</p>
+<% end %>
+
+
+
+
+
+
+
+
+<div id="content">
+<% if @patient.errors.any? %>
+<p>Erreurs lors de la modifications : </p>
+<ul>
+<% @patient.errors.full_messages.each do |message| %>
+<li> <%= message %> </li>
+<% end %>
+</ul>
+<% end %>
 
 <section class="page-section">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -76,13 +132,15 @@
                     <h1 class="panel-title pull-left" style="font-size:30px;">Mon profil</h1>
                 </div>
             </div>
+            <%= form_for @patient do |f| %>
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3 class="panel-title pull-left">Votre nom</h3>
+                    <h3 class="panel-title pull-left">Identité</h3>
                     <br><br>
                     <form class="form-horizontal">
-                        <label for="First_name">Prénom</label>
-                        <input type="text" class="form-control" id="First_name" placeholder="Prénom" > <br>
+                        <label for="First_name"> Prénom</label>
+                        <input  type="text" class="form-control" id="first_name" placeholder="Prénom">
+                         <br>
                         <label for="Last_name">Nom</label>
                         <input type="email" class="form-control" id="Last_name" placeholder="Nom" >
                     </form>
@@ -301,6 +359,7 @@
                     <h3 class="panel-title pull-left">Sauvegarder mon profil</h3>
                     <br><br>                                     
                     <button class="btn btn-primary"><i class="fa fa-fw fa-check" aria-hidden="true"></i> Editer</button>
+                    <% end %>
                 </div>
             </div>
         </div>
