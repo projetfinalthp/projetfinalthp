@@ -152,12 +152,6 @@ p {
     color: black;
 }
 
-a, a:hover, a:focus {
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
 #sidebar {
     /* don't forget to add all the previously mentioned styles here too */
     background: rgb(17,73,145);
@@ -185,10 +179,6 @@ a, a:hover, a:focus {
     padding: 10px;
     font-size: 16px;
     display: block;
-}
-#sidebar ul li a:hover {
-    color: black;
-    background: #fff;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
@@ -227,8 +217,8 @@ ul ul a {
   /* Icon  3*/
   
  #nav-icon3 {
-    width: 30px;
-    height: 10px;
+    width: 40px;
+    height: 20px;
     position: relative;
     margin-top: 20px;
     margin-bottom: 60px;
@@ -248,7 +238,7 @@ ul ul a {
   #nav-icon3 span {
     display: block;
     position: absolute;
-    height: 4px;
+    height: 6px;
     width: 100%;
     background: yellow;
     border-radius: 9px;
@@ -266,21 +256,16 @@ ul ul a {
   
   /* Icon 3 */
   
-  #nav-icon3 span:nth-child(1) {
-    top: 0px;
-    width: 20px;
-  }
-  
   #nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
-    top: 10px;
+    top: 15px;
   }
   
   #nav-icon3 span:nth-child(4) {
-    top: 20px;
+    top: 30px;
   }
   
   #nav-icon3.open span:nth-child(1) {
-    top: 10px;
+    top: 15px;
     width: 0%;
     left: 50%;
   }
@@ -305,11 +290,18 @@ ul ul a {
     left: 50%;
   }
 
-  .link_color-sidebar:hover{
-    background: white;
-    color: black !important;
+  .link_color-sidebar:hover {
+    color: yellow !important;
     }
+
     .link_color-sidebar {
     color: black !important;
     }
+
+    .link_color-icon {
+        color: white; !important;
+        }
     
+        .link_color-icon:hover {
+            color: yellow !important;
+            }
