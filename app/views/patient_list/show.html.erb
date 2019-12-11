@@ -37,7 +37,7 @@
 		                            <span class="fa fa-envelope fa-fw text-muted" data-toggle="tooltip" data-original-title="" title=""></span>
 		                            <span class="text-muted small text-truncate"><%= patient.email %></span>
 																<br>
-																<a href="#" class="card-link float-right">Afficher plus de détails</a>
+																<%= link_to "Afficher plus de détail", patient_path(patient.id) %>
 		                        </div>
 		                    </div>
 		                </li>
