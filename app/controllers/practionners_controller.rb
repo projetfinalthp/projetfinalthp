@@ -9,9 +9,24 @@ before_action :authorize_user, except: [:index]
   end
 
   def edit
+    @practionner = Practionner.find(params[:id])
+  end
+
+  def update
+    @practionner = Practionner.find(params[:id])
+    if @practionner = Practionner.update(practionner_params)
+    redirect_to edit_practionner_path
+    else
+    render 'edit'
+    end 
   end
   
   private
+
+  def practionner_params
+    params.require(:practionner).permit(:first_name, :last_name, :specialty, :adress, :sexe, :diploma, :certifications)
+  end
+
 
 	def authorize_user 
     @user = Practionner.find(params[:id])
