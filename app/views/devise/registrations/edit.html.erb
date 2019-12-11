@@ -4,13 +4,21 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="form-group">
+  <div class="row">
   <div class="col-sm-4">
   <%if resource.avatar.attached?%>
   <%= image_tag resource.avatar, size: 100, class:"rounded-circle", alt: 'avatar' %>
 <%else%>
- <%= image_tag gravatar_image_url(@patient.email, size: 100), class:"rounded-circle" %>
+ <%= image_tag gravatar_image_url(resource.email, size: 100), class:"rounded-circle" %>
 <%end%>
 </div>
+
+  <div class="col-sm-8">
+    <%= f.file_field :avatar %>
+  </div>
+</div>
+</div>
+
 
 
   <div class="field">
