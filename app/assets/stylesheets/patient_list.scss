@@ -14,7 +14,7 @@
 
 }
 
-.card-link  {
+.card-link {
   border-radius: 4px !important;
   color: #FFFFFF !important;
   display: inline-block !important;
@@ -22,7 +22,8 @@
   font-weight: 600 !important;
   text-transform: uppercase !important;
   text-align: center !important;
-  background-color: #29ACE2 !important;
+  background: rgb(17,73,145);
+  background: linear-gradient(90deg, rgba(17,73,145,1) 17%, rgba(41,163,226,1) 100%);
   padding-top: 2px !important;
   padding-bottom: 2px !important;
   width: 130px !important;
@@ -34,7 +35,7 @@ hr.accent {
     border-color:
     #fcf113;
     opacity: 1;
-    
+
 }
 
 hr {
