@@ -14,8 +14,18 @@
             <a class="nav-link js-scroll-trigger" href="#bipolarity">La maladie</a>
           </li>
            <li class="nav-item">
+            <%if patient_signed_in? %>
+            <%= image_tag current_patient_avatar(current_patient), size: 50, class:"rounded-circle" %>
+            <% else %>
+             <a class="nav-link js-scroll-trigger" href="#connexion">Connexion</a>
+            <% end %>
+          </li>
+             <li class="nav-item">
+            <%if practionner_signed_in? %>
             <%= image_tag current_practionner_avatar(current_practionner), size: 50, class:"rounded-circle" %>
-          
+            <% else %>
+             <a class="nav-link js-scroll-trigger" href="#connexion">Connexion</a>
+            <% end %>
           </li>
         </ul>
       </div>
@@ -31,7 +41,7 @@
         </div>
       </div>
       <div class="row text-center">
-        <div class="col-md-6">
+        <div class="col-md-6" id= "connexion">
           <h4 class="section-heading"> Vous êtes</h4>
           <h3 class="section-subheading">un patient</h3>
           <img class="mx-auto rounded-circle" src="https://i.goopics.net/3KnvQ.png" alt=""><br><br>

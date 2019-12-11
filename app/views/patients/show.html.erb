@@ -4,12 +4,9 @@
 <%= link_to "MON PROFIL", patients_path %>
 
 <h3>Photo de profil actuel</h3>
-<%if current_patient.avatar.attached?%>
-  <%= image_tag current_patient.avatar, size: 100, class:"rounded-circle" %>
-<%else%>
- <%= image_tag gravatar_image_url(current_patient.email, size: 100), class:"rounded-circle" %>
-
-<%end%>
+<div>
+<%= image_tag current_patient_avatar(current_patient), size: 100, class:"rounded-circle" %>
+</div>
 
 <h3>Changer d'avatar ?</h3>
 <%= form_tag patient_avatars_patient_index_path(current_patient), multipart: true do %>
