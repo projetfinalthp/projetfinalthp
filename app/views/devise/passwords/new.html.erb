@@ -1,16 +1,23 @@
-<h2>l'écran "mot de passe oublié ?" où tu rentres ton adresse email pour recevoir un email de réinitialisation de mot de passe.</h2>
+<div class="container-login100">
+  <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+    <div class="login100-form validate-form">
+      <h2 class="login100-form-title p-b-37">Mot de passe oublié ?</h2><br>
+      <div class="">
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control", placeholder: "Votre adresse email" %>
+  </div><br>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+    <%= f.submit "Envoyez moi les instructions", class: "login100-form-btn float-left" %>
+  </div> <br>
+<% end %> <br><br>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
+</div>

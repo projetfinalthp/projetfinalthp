@@ -1,6 +1,91 @@
 // Place all the styles related to the PatientList controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//  ############ SEARCH BAR  AVEC JS############
+
+// #myInput {
+//   background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+//   background-position: 10px 12px; /* Position the search icon */
+//   background-repeat: no-repeat; /* Do not repeat the icon image */
+//   width: 100%; /* Full-width */
+//   font-size: 16px; /* Increase font-size */
+//   padding: 12px 20px 12px 40px; /* Add some padding */
+//   border: 1px solid #ddd; /* Add a grey border */
+//   margin-bottom: 12px; /* Add some space below the input */
+// }
+//
+// #myUL {
+//   /* Remove default list styling */
+//   list-style-type: none;
+//   padding: 0;
+//   margin: 0;
+// }
+//
+// #myUL li a {
+//   border: 1px solid #ddd; /* Add a border to all links */
+//   margin-top: -1px; /* Prevent double borders */
+//   background-color: #f6f6f6; /* Grey background color */
+//   padding: 12px; /* Add some padding */
+//   text-decoration: none; /* Remove default text underline */
+//   font-size: 18px; /* Increase the font-size */
+//   color: black; /* Add a black text color */
+//   display: block; /* Make it into a block element to fill the whole list */
+// }
+//
+// #myUL li a:hover:not(.header) {
+//   background-color: #eee; /* Add a hover effect to all links, except for headers */
+// }
+//  ############ SEARCH BAR  AVEC JS############
+
+// ############ SEARCH BAR ############
+    .searchbar {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background: rgb(17,73,145);
+    background: linear-gradient(90deg, rgba(17,73,145,1) 17%, rgba(41,163,226,1) 100%);
+    border-radius: 25px;
+    padding: 10px;
+    }
+
+    .search_input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input {
+    padding: 0 10px;
+    width: 450px;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon {
+    background: white;
+    color: #ffc107;
+    }
+
+    .search_icon {
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
+  //  ############ SEARCH BAR ############
+
+
 .card {
     position: relative;
     display: -ms-flexbox;
@@ -9,9 +94,46 @@
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: black;
+    background-color: #fff;
     background-clip: border-box;
-// border: 1px solid
-    // rgba(0,0,0,.125);
-    // border-radius: .25rem;
-}
+    margin : 20px;
+    }
+
+.card-link {
+  border-radius: 4px !important;
+  color: #FFFFFF !important;
+  display: inline-block !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  background: rgb(17,73,145);
+  background: linear-gradient(90deg, rgba(17,73,145,1) 17%, rgba(41,163,226,1) 100%);
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  width: 130px !important;
+  font-size: 12px !important;
+  line-height: 16px !important;
+  }
+
+hr.accent {
+    border-color:
+    #fcf113;
+    opacity: 1;
+  }
+
+hr {
+    max-width: 150px;
+    border-width: 5px;
+    opacity: 0.08;
+    margin-top: 15px;
+    margin-bottom: 25px;
+  }
+
+.link_color-patient_list {
+    background: white;
+    color: black !important;
+    }
+    .link_color-sidebar {
+    color: black !important;
+    }

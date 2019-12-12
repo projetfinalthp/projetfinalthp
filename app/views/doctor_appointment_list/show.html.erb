@@ -7,42 +7,70 @@
     <title>Mes soignants</title>
     <!-- Bootstrap CSS CDN -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Font Awesome JS -->
+    
+	<!-- Our CSS CDN -->
+	<link href="side-navbar.css" rel="stylesheet">
+
+	 <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/732403f21f.js" crossorigin="anonymous"></script>
+	<!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <!-- My CSS -->
-    <link rel="stylesheet" href="side-navbar.css">
     <script>
       $(document).ready(function () {
-      
+
              $('#sidebarCollapse').on('click', function () {
                  $('#sidebar').toggleClass('active');
              });
-      
+
          });
     </script>
     <script>
       $('.dropdown-toggle').dropdown()
     </script>
 
+	 <script>$(document).ready(function(){
+	$('#nav-icon3').click(function(){
+		$(this).toggleClass('open');
+		});
+	});
+	</script>
+
+
       </head>
 	<body>
-    
+
     <div class="wrapper">
 		<!-- Sidebar  -->
 			<nav id="sidebar">
 			<div class="sidebar-header">
-				<h3>BIPOLINK</h3>
+				<img src="https://i.ibb.co/PmfTM9j/Moodlinkv3.png" class="logo-size">
 			</div>
 			<ul class="list-group">
 				<li>
-				<button type="button" id="sidebarCollapse" class="btn btn-info">
-					<i class="fas fa-align-left"></i>
-				</button>
-				<div id="navbar-text-color"><%= link_to "MON DASHBOARD", patient_path(params[:id]) %></div>
-				<%= link_to "MES PATIENTS", root_path %>
-				<%= link_to "MON PROFIL", root_path %>
-				<%= link_to "MES RDVs", root_path %>
+				<div id="sidebarCollapse"><div id="nav-icon3" id="sidebarCollapse">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div></div>
+				<div class="navbar-text-color">
+				<div class="nav-link">
+				<div class="media align-items-center">
+        <%= link_to ('<i class="fas fa-chart-bar fa-2x"></i>'.html_safe), patient_path(params[:id]), class: "link_color-icon" %>
+			  <%= link_to "Mon dashboard", patient_path(params[:id]), class: 'link_color-sidebar' %>
+				</div></div>
+				<div class="nav-link">
+				<div class="media align-items-center">
+        <%= link_to ('<i class="fas fa-user-md fa-2x icon-perso"></i>'.html_safe), patient_path(params[:id]), class: "link_color-icon" %>
+				<%= link_to "Mes soignants et RDV", doctor_appointment_list_path, class: 'link_color-sidebar' %>
+				</div></div>
+				<div class="nav-link">
+				<div class="media align-items-center">
+        <%= link_to ('<i class="fas fa-user fa-2x icon-perso"></i>'.html_safe), patient_path(params[:id]), class: "link_color-icon" %>
+				<%= link_to "Mon profil", patients_path, class: 'link_color-sidebar' %>
+				</div></div>
+				</div>
 				</li>
 			</ul>
 			</nav>
@@ -51,7 +79,7 @@
 		<nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
 			<div class="container-fluid">
 					<!-- Brand -->
-					<a class="h4 mb-0 text-black text-uppercase d-none d-lg-inline-block" href="./index.html">Mes soignants</a>
+					<a class="h4 mb-0 text-black text-uppercase d-none d-lg-inline-block" href="./index.html">Mes soignants et RDVs</a>
 					<!-- User -->
 					<div class="dropdown">
 						<%= image_tag current_patient_avatar(current_patient), size: 30, class:"rounded-circle"%>
@@ -70,6 +98,9 @@
 	    <br>
         <div class="container-fluid">
           <h5>Mes prochains rendez-vous</h5>
+
+
+
           <div class="container-fluid">
             <div class="row">
               <% @patient_appointments.each do |appointment| %>
@@ -93,6 +124,9 @@
             </div>
           </div>
         </div>
+
+
+
 
         <div class="container">
           <h5>Mon équipe soignante</h5>
