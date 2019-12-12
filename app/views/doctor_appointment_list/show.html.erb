@@ -1,170 +1,55 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Mes soignants</title>
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
-	<!-- Our CSS CDN -->
-	<link href="side-navbar.css" rel="stylesheet">
-
-	 <!-- Place your kit's code here -->
-    <script src="https://kit.fontawesome.com/732403f21f.js" crossorigin="anonymous"></script>
-	<!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    
-    <!-- Sidebar Toggle -->
-    <script>
-      $(document).ready(function () {
-
-             $('#sidebarCollapse').on('click', function () {
-                 $('#sidebar').toggleClass('active');
-             });
-
-         });
-    </script>
-
-    <!-- Dropdown Toggle -->
-    <script>
-      $('.dropdown-toggle').dropdown()
-    </script>
-
-	 <script>$(document).ready(function(){
-	$('#nav-icon3').click(function(){
-		$(this).toggleClass('open');
-		});
-	});
-	</script>
-
-
-      </head>
-	<body>
-
-    <div class="wrapper">
-		<!-- Sidebar  -->
-			<nav id="sidebar">
-			<div class="sidebar-header">
-				<img src="https://i.ibb.co/PmfTM9j/Moodlinkv3.png" class="logo-size">
-			</div>
-			<ul class="list-group">
-				<li>
-				<div id="sidebarCollapse"><div id="nav-icon3" id="sidebarCollapse">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div></div>
-				<div class="navbar-text-color">
-				<div class="nav-link">
-				<div class="media align-items-center">
-        <%= link_to ('<i class="fas fa-chart-bar fa-2x"></i>'.html_safe), patient_path(params[:id]), class: "link_color-icon" %>
-			  <%= link_to "Mon dashboard", patient_path(params[:id]), class: 'link_color-sidebar' %>
-				</div></div>
-				<div class="nav-link">
-				<div class="media align-items-center">
-        <%= link_to ('<i class="fas fa-user-md fa-2x icon-perso"></i>'.html_safe), patient_path(params[:id]), class: "link_color-icon" %>
-				<%= link_to "Mes soignants et RDV", doctor_appointment_list_path, class: 'link_color-sidebar' %>
-				</div></div>
-				<div class="nav-link">
-				<div class="media align-items-center">
-        <%= link_to ('<i class="fas fa-user fa-2x icon-perso"></i>'.html_safe), patient_path(params[:id]), class: "link_color-icon" %>
-				<%= link_to "Mon profil", patients_path, class: 'link_color-sidebar' %>
-				</div></div>
-				</div>
-				</li>
-			</ul>
-			</nav>
- 	<!-- Page Content  -->
-    <div id="content">
-		<nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
-			<div class="container-fluid">
-					<!-- Brand -->
-					<a class="h4 mb-0 text-black text-uppercase d-none d-lg-inline-block" href="./index.html">Mes soignants et RDVs</a>
-					<!-- User -->
-					<div class="dropdown">
-						<img src="https://i.redd.it/6onq25y0sh311.jpg" class="float-left rounded-circle avatar-sm">
-						<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Luke Skywalker
-						</button>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Mon profil</a>
-							<a class="dropdown-item" href="#">Paramètres</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Se déconnecter</a>
-						</div>
-					</div>
-			</div>
-		</nav>
-	    <br>
-        <div class="container-fluid">
-          <h5>Mes prochains rendez-vous</h5>
-
-
-
-          <div class="container-fluid">
-            <div class="row">
-              <% @patient_appointments.each do |appointment| %>
-                <div class="card mb-3 mr-3" style="width: 18rem;">
-                  <div class="card-header"><%= appointment.date %></div>
-                  <div class="card-body">
-                    <img src="https://bit.ly/352vL1I" class="float-left rounded-circle avatar-md">
-                    <div class="content">
-                      <h5 class="card-title">Nom du docteur</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Psychiatre</h6>
-                      <br>
-                    </div>
-                    <p class="card-text">Conventionné secteur 1
-                      <br>
-                      Adresse</p>
-                    <div class="card-link"><%= link_to "VOIR PLUS", practionner_path %></div>
-                    <a href="#" class="card-link">Prendre RDV</a>
-                  </div>
+<%= render 'layouts/side-navbar-patient' %>
+<%= render 'layouts/top-navbar-patient' %>
+<div class="container">
+  <div class="row">
+    <div class="content">
+      <h5>Mes prochains rendez-vous</h5>
+      <div class="container-fluid">
+        <div class="row">
+          <% @patient_appointments.each do |appointment| %>
+            <div class="card mb-3 mr-3" style="width: 18rem;">
+              <div class="card-header"><%= appointment.date %></div>
+              <div class="card-body">
+                <img src="https://bit.ly/352vL1I" class="float-left rounded-circle avatar-md">
+                <div class="content">
+                  <h5 class="card-title">Nom du docteur</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Psychiatre</h6>
+                  <br>
                 </div>
-              <% end %>
+                <p class="card-text">Conventionné secteur 1
+                  <br>
+                  Adresse</p>
+                <div class="card-link"><%= link_to "VOIR PLUS", practionner_path %></div>
+                <a href="#" class="card-link">Prendre RDV</a>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <h5>Mon équipe soignante</h5>
+      <br>
+      <div class="row">
+        <% @patient_practionners.each do |practionner| %>
+          <div class="card mb-3 mr-3" style="width: 18rem;">
+            <div class="card-body">
+              <img src="https://bit.ly/352vL1I" class="float-left rounded-circle avatar-md">
+              <div class="content">
+                <h5 class="card-title">Dr. <%= practionner.first_name %> <%= practionner.last_name %></h5>
+                <h6 class="card-subtitle mb-2 text-muted">Psychiatre</h6>
+                <br>
+              </div>
+              <p class="card-text">Conventionné secteur 1
+                <br>
+                Adresse</p>
+              <div class="card-link"><%= link_to "VOIR PLUS", practionner_path %></div>
+              <a href="#" class="card-link">Prendre RDV</a>
             </div>
           </div>
-        </div>
-
-
-
-
-        <div class="container">
-          <h5>Mon équipe soignante</h5>
-          <br>
-          <div class="row">
-            <% @patient_practionners.each do |practionner| %>
-              <div class="card mb-3 mr-3" style="width: 18rem;">
-                <div class="card-body">
-                  <img src="https://bit.ly/352vL1I" class="float-left rounded-circle avatar-md">
-                  <div class="content">
-                    <h5 class="card-title">Dr. <%= practionner.first_name %> <%= practionner.last_name %></h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Psychiatre</h6>
-                    <br>
-                  </div>
-                  <p class="card-text">Conventionné secteur 1
-                    <br>
-                    Adresse</p>
-                  <div class="card-link"><%= link_to "VOIR PLUS", practionner_path %></div>
-                  <a href="#" class="card-link">Prendre RDV</a>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
+        <% end %>
+      </div>
     </div>
-    </div>
-    </div>
-  </body>
-  <!-- jQuery CDN - Slim version (=without AJAX) -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <!-- Popper.JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-  <!-- Bootstrap JS -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-  <!-- jQuery Custom Scroller CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-</html>
+  </div>
+</div>
+

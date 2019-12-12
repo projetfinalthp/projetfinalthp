@@ -72,5 +72,9 @@ p {
 
 .container {
   max-width: 100% !important;
-  background-color: coral;
+}
+
+.content{
+  width: 100% !important;
+  padding: 30px;
 }
