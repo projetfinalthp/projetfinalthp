@@ -5,6 +5,9 @@ ruby '2.5.1'
 gem 'table_print'
 gem 'devise'
 
+# Use Amazon for Active Storage
+gem "aws-sdk-s3", require: false
+
 # Gem to generate charts
 gem 'chartkick'
 # Gem to group data
