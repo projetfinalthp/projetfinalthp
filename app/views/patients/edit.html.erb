@@ -1,157 +1,94 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>Mon profil</title>
-
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-
-    <!-- My CSS -->
-    <link rel="stylesheet" href="side-navbar.css">
-
-    <script> $(document).ready(function () {
-
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
-        });
-
-    });
-    </script> 
-
 <!-- Links edit profile -->
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-</head>
-
-<body>
-
- <!-- Page Content  -->
-
-
-<div class="wrapper">
-    <!-- Sidebar  -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>BIPOLINK</h3>
-        </div>
-
-        <ul class="list-group">
-
-            <li>
-            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                <i class="fas fa-align-left"></i>
-            </button>
-                <div id="navbar-text-color"><%= link_to "HOME", patient_path(current_patient.id) %></div>
-                <%= link_to "MES SOIGNANTS/MES RDVs", doctor_appointment_list_path(current_patient.id) %>
-                <%= link_to "MON PROFIL", patients_path %>
-            </li>
-        </ul>
-
-    </nav>
-
-</head>    
-
-<div id="content">
-
-<section class="page-section">
-<div class="mainbody container-fluid">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<!-- Page Content  -->
+<%= render 'layouts/side-navbar-patient' %>
+<%= render 'layouts/top-navbar-patient' %>
+<div class="container">
+  <div class="row">
+    <div id="content">
+      <section class="page-section">
+        <div class="mainbody container-fluid">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="panel panel-default">
-            <%= form_for @patient do |f| %>
+              <%= form_for @patient do |f| %>
                 <div class="panel-body">
-                    <h1 class="panel-title pull-left" style="font-size:30px;">Mon profil</h1>
+                  <h1 class="panel-title pull-left" style="font-size:30px;">Mon profil</h1>
                 </div>
-            </div>
-            <div class="panel panel-default">
+              </div>
+              <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3 class="panel-title pull-left">Identité</h3>
-                    <br><br>
-                    <form class="form-horizontal">
-                        <label for="First_name"> Prénom</label>
-                        <%= f.text_field :first_name, class: "form-control" %>
-                         <br>
-                        <label for="Last_name">Nom</label>
-                        <%= f.text_field :last_name, class: "form-control" %>
-                    </form>
+                  <h3 class="panel-title pull-left">Identité</h3>
+                  <br>
+                  <br>
+                  <form class="form-horizontal">
+                    <label for="First_name"> Prénom</label>
+                    <%= f.text_field :first_name, class: "form-control" %>
+                    <br>
+                    <label for="Last_name">Nom</label>
+                    <%= f.text_field :last_name, class: "form-control" %>
+                  </form>
                 </div>
-            </div>
-            <div class="panel panel-default">
+              </div>
+              <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3 class="panel-title pull-left">Votre photo</h3>
-                    <br><br>
-                    <div align="center">
-                        <div class="col-lg-12 col-md-12">
-                            <img class="img-thumbnail img-responsive" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="300px" height="300px">
-                        </div>
-                        <div class="col-lg-12 col-md-12">
-                            <button class="btn btn-primary"><i class="fa fa-upload" aria-hidden="true"></i> Télécharger une nouvelle photo de profil ! </button>
-                        </div>
+                  <h3 class="panel-title pull-left">Votre photo</h3>
+                  <br>
+                  <br>
+                  <div align="center">
+                    <div class="col-lg-12 col-md-12">
+                      <img class="img-thumbnail img-responsive" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="300px" height="300px">
                     </div>
+                    <div class="col-lg-12 col-md-12">
+                      <button class="btn btn-primary"><i class="fa fa-upload" aria-hidden="true"></i> Télécharger une nouvelle photo de profil ! </button>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="panel panel-default">
+              </div>
+              <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3 class="panel-title pull-left">Votre traitement</h3>
-                    <br><br>
-                    <form class="form-horizontal">
+                  <h3 class="panel-title pull-left">Votre traitement</h3>
+                  <br>
+                  <br>
+                  <form class="form-horizontal">
                     <%= f.text_area :treatment, class: "form-control" %>
-                    </form>
+                  </form>
                 </div>
-            </div>
-            <div class="panel panel-default">
+              </div>
+              <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3 class="panel-title pull-left">Informations</h3>
-                    <br><br>
-                    <form class="form-horizontal">
-                        <label for="Your_location">Ville</label>
-                        <%= f.text_field :city, class: "form-control" %>
-                        <br>
-                        <label for="Your_gender">Sexe</label>
-                        <%= f.text_field :sexe, class: "form-control" %>
-                        <br>
-                        <label>Date de naissance</label>
-                        <div class="form-inline" id="birth-date">
-                        <%= f.datetime_field :birth, class: "form-control" %>
-                        </div>
-                    </form>
+                  <h3 class="panel-title pull-left">Informations</h3>
+                  <br>
+                  <br>
+                  <form class="form-horizontal">
+                    <label for="Your_location">Ville</label>
+                    <%= f.text_field :city, class: "form-control" %>
+                    <br>
+                    <label for="Your_gender">Sexe</label>
+                    <%= f.text_field :sexe, class: "form-control" %>
+                    <br>
+                    <label>Date de naissance</label>
+                    <div class="form-inline" id="birth-date">
+                      <%= f.datetime_field :birth, class: "form-control" %>
+                    </div>
+                  </form>
                 </div>
-            </div>
-            <hr>
-            <div class="panel panel-default">
+              </div>
+              <hr>
+              <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3 class="panel-title pull-left">Sauvegarder mon profil</h3>
-                    <br><br>                                     
-                    <%= f.submit "Mettre à jour" %>
+                  <h3 class="panel-title pull-left">Sauvegarder mon profil</h3>
+                  <br>
+                  <br>
+                  <%= f.submit "Mettre à jour" %>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
-<% end %>
-
-</section>
+      <% end %>
+    </section>
+  </div>
 </div>
 
-</body>
-
- <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <!-- jQuery Custom Scroller CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
-</html>

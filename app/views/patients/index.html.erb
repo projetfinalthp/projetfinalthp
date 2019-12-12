@@ -1,46 +1,5 @@
-<head>
-
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-
-    <!-- My CSS -->
-    <link rel="stylesheet" href="side-navbar.css">
-
-    <script> $(document).ready(function () {
-
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
-        });
-
-    });
-    </script>
-
-<% @id_user = current_patient.id %>
-
-<div class="wrapper">
-    <!-- Sidebar  -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>BIPOLINK</h3>
-        </div>
-
-        <ul class="list-group">
-
-            <li>
-            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                <i class="fas fa-align-left"></i>
-            </button>
-                <div id="navbar-text-color"><%= link_to "HOME", patient_path(current_patient.id) %></div>
-                <%= link_to "MES SOIGNANTS/MES RDVs", doctor_appointment_list_path(current_patient.id) %>
-                <%= link_to "MON PROFIL", patients_path %>
-            </li>
-        </ul>
-
-    </nav>
+<%= render 'layouts/side-navbar-patient' %>
+<%= render 'layouts/top-navbar-patient' %>
 
 <section class="page-section bg-light" id="editprofile">
   <div class="container">
@@ -75,7 +34,7 @@
             </div>
           </div>
           <br>
-          <center><button class="btn btn-dark btn-xl text-uppercase js-scroll-trigger"> <%= link_to "Editer mon profil", edit_patient_path(@id_user) %></button> </center>
+          <center><button class="btn btn-dark btn-xl text-uppercase js-scroll-trigger"> <%= link_to "Editer mon profil", edit_patient_path(current_patient.id) %></button> </center>
     </div>
   </div>
 </div>
