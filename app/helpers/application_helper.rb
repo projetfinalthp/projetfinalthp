@@ -1,5 +1,5 @@
 module ApplicationHelper
-
+	
 	def current_practionner_avatar(current_practionner)
 		if current_practionner.avatar.attached?
 			current_practionner.avatar
