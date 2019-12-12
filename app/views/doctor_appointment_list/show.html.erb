@@ -57,17 +57,17 @@
 				<div class="navbar-text-color">
 				<div class="nav-link">
 				<div class="media align-items-center">
-        <%= link_to ('<i class="fas fa-chart-bar fa-2x"></i>'.html_safe), patient_path(params[:id]), class: "link_color-icon" %>
-			  <%= link_to "Mon dashboard", patient_path(params[:id]), class: 'link_color-sidebar' %>
+        <%= link_to ('<i class="fas fa-chart-bar fa-2x"></i>'.html_safe), patient_path(current_patient.id), class: "link_color-icon" %>
+			  <%= link_to "Mon dashboard", patient_path(current_patient.id), class: 'link_color-sidebar' %>
 				</div></div>
 				<div class="nav-link">
 				<div class="media align-items-center">
-        <%= link_to ('<i class="fas fa-user-md fa-2x icon-perso"></i>'.html_safe), patient_path(params[:id]), class: "link_color-icon" %>
-				<%= link_to "Mes soignants et RDV", doctor_appointment_list_path, class: 'link_color-sidebar' %>
+        <%= link_to ('<i class="fas fa-user-md fa-2x icon-perso"></i>'.html_safe), patient_path(current_patient.id), class: "link_color-icon" %>
+				<%= link_to "Mes soignants et RDV", doctor_appointment_list_path(current_patient.id), class: 'link_color-sidebar' %>
 				</div></div>
 				<div class="nav-link">
 				<div class="media align-items-center">
-        <%= link_to ('<i class="fas fa-user fa-2x icon-perso"></i>'.html_safe), patient_path(params[:id]), class: "link_color-icon" %>
+        <%= link_to ('<i class="fas fa-user fa-2x icon-perso"></i>'.html_safe), patient_path(current_patient.id), class: "link_color-icon" %>
 				<%= link_to "Mon profil", patients_path, class: 'link_color-sidebar' %>
 				</div></div>
 				</div>

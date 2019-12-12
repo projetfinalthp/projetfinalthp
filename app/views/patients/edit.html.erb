@@ -52,8 +52,8 @@
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-align-left"></i>
             </button>
-                <div id="navbar-text-color"><%= link_to "HOME", practionner_path %></div>
-                <%= link_to "MES SOIGNANTS/MES RDVs", doctor_appointment_list_path %>
+                <div id="navbar-text-color"><%= link_to "HOME", patient_path(current_patient.id) %></div>
+                <%= link_to "MES SOIGNANTS/MES RDVs", doctor_appointment_list_path(current_patient.id) %>
                 <%= link_to "MON PROFIL", patients_path %>
             </li>
         </ul>
