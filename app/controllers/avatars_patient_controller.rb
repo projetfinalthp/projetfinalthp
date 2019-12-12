@@ -4,6 +4,6 @@ class AvatarsPatientController < ApplicationController
     @patient = Patient.find(params[:patient_id])
     @patient.avatar.purge
     @patient.avatar.attach(params[:avatar])
-    redirect_to(patient_path(@patient))
+    redirect_to(edit_patient_path(@patient))
  	end
 end
