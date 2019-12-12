@@ -171,8 +171,8 @@ p {
 }
 
 #sidebar ul p {
-    padding: 10px;
-    color: white;
+    color: white !important;
+    padding: 10px !important;
 }
 
 #sidebar ul li a {
