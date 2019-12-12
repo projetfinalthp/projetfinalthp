@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_12_09_152801) do
   create_table "days", force: :cascade do |t|
     t.datetime "date"
     t.integer "hours_of_sleep"
-    t.string "mood"
+    t.integer "mood"
     t.text "treatment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
