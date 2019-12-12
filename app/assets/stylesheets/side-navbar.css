@@ -5,6 +5,7 @@
     float: left !important;
 }
 
+
 /* Shrinking the sidebar from 250px to 80px and center aligining its content*/
 #sidebar.active {
     min-width: 80px;
