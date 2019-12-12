@@ -1,19 +1,23 @@
-<h1>
-	MON PROFIL
-</h1>
 
-<% @id_user = current_patient.id %>
-<%= link_to "Dashbord", patient_path(@id_user) %>
+<%= render 'layouts/side-navbar' %> 
 
-<br>
-<br>
-<%= current_patient.first_name %>
+<div class="container">
+    <div class="row">
+		<div class="container">
+			<h1>MON PROFIL</h1>
+			<% @id_user = current_patient.id %>
+			<%= link_to "Dashbord", patient_path(@id_user) %>
+			<%= current_patient.first_name %><%= current_patient.last_name %>
+			<br>
+			<%= link_to "Editer mon profil", edit_patient_path(@id_user) %>
 
-<br>
-<br>
-<%= current_patient.last_name %>
-
-<br>
-<br>
-
-<%= link_to "Editer mon profil", edit_patient_path(@id_user) %>
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

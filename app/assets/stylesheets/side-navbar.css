@@ -9,6 +9,7 @@
     min-width: 250px;
     max-width: 250px;
     min-height: 100vh;
+    float: left !important;
 }
 
 /* Shrinking the sidebar from 250px to 80px and center aligining its content*/
@@ -190,12 +191,6 @@ ul ul a {
     padding-left: 30px !important;
     background: #29ACE2;
 }
-
-* {
-    margin: 0;
-    padding: 0; 
-  }
-  
 
 .logo-size {
     width: 100px;
