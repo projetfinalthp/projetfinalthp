@@ -1,3 +1,5 @@
+<% @id_user = current_practionner.id %>
+
 <section class="page-section bg-light" id="editprofile">
   <div class="container">
     <div class="col-lg-12">
@@ -30,7 +32,6 @@
             </div>
           </div>
           <br>
-          <% @id_user = current_practionner.id %>
             <center><button class="btn btn-dark btn-xl text-uppercase js-scroll-trigger"> <%= link_to "Editer mon profil", edit_practionner_path(@id_user) %></button></center>
 </a></center>
       </div>
