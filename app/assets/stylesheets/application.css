@@ -41,7 +41,7 @@ p {
 #mainNav {
     transition: padding-top .3s,padding-bottom .3s;
     border: none;
-    background-color: #29ace2;
+    background-color: #11ffee00;
 }
 
 #bipolink {
@@ -52,6 +52,8 @@ p {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+    background: rgb(17,73,145);
+    background: linear-gradient(to bottom, rgba(17,73,145,1) 17%, rgba(41,163,226,1) 100%);
 }
 
 #editprofile {
