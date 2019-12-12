@@ -5,6 +5,12 @@ ruby '2.5.1'
 gem 'table_print'
 gem 'devise'
 
+# Gem to generate charts
+gem 'chartkick'
+# Gem to group data
+gem 'groupdate'
+# Gem Faker to create the seed
+gem 'faker'
 gem "letter_opener", :group => :development
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
