@@ -93,12 +93,13 @@
                     <h3 class="panel-title pull-left">Votre photo</h3>
                     <br><br>
                     <div align="center">
-                        <div class="col-lg-12 col-md-12">
-                            <img class="img-thumbnail img-responsive" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="300px" height="300px">
-                        </div>
-                        <div class="col-lg-12 col-md-12">
-                            <button class="btn btn-primary"><i class="fa fa-upload" aria-hidden="true"></i> Télécharger une nouvelle photo de profil ! </button>
-                        </div>
+                      <div class="col-lg-12 col-md-12">
+                            <%= image_tag current_patient_avatar(current_patient), resize: "200x200", class:"rounded-circle" %> </div>
+                            <div class="col-lg-12 col-md-12">
+                                <%= form_tag patient_avatars_patient_index_path(current_patient), multipart: true do %>
+                                <%= file_field_tag :avatar %>
+                                <%= submit_tag "Télécharger une nouvelle photo de profil !" %>
+                            <% end %></div>
                     </div>
                 </div>
             </div>

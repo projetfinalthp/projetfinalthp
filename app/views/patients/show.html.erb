@@ -1,20 +1,7 @@
 <h1>PAGE DASHBOARD</h1>
 
-<p>Bienvenue sur votre page profil <%=current_patient.first_name%> !</p>
 <%= link_to "MON PROFIL", patients_path %>
-
-<h3>Photo de profil actuel</h3>
-<div>
-<%= image_tag current_patient_avatar(current_patient), size: 100, class:"rounded-circle" %>
-</div>
-
-<h3>Changer d'avatar ?</h3>
-<%= form_tag patient_avatars_patient_index_path(current_patient), multipart: true do %>
-  <%= file_field_tag :avatar %>
-  <%= submit_tag "mettre à jour" %>
-<% end %>
 <br>
-
 <%= link_to "MES SOIGNANTS/MES RDVs", doctor_appointment_list_path %>
 
 <br>
