@@ -1,18 +1,15 @@
-<h1>PAGE DASHBOARD</h1>
-
-<%= link_to "MON PROFIL", patients_path %>
-
-<br>
-<br>
-<br>
-
-<h4>
-	Patient mood
-</h4>
-<%= line_chart @patient_day.group_by_day(:created_at).sum(:mood) %>
-
-<br> 
-<h4>
-	Patient hours of sleep
-</h4>
-<%= line_chart @patient_day.group_by_day(:created_at).sum(:hours_of_sleep) %>
+<%= render 'layouts/side-navbar-patient' %>
+<%= render 'layouts/top-navbar-patient' %>
+<div class="container">
+  <div class="row">
+    <div class="content">
+      <h1>MON DASHBOARD</h1>
+      <br>
+      <h4>Ma courbe d'humeur</h4>
+      <%= line_chart @patient_day.group_by_day(:created_at).sum(:mood) %>
+      <br>
+      <h4>Mon sommeil</h4>
+      <%= line_chart @patient_day.group_by_day(:created_at).sum(:hours_of_sleep) %>
+    </div>
+  </div>
+</div>
