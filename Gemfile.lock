@@ -90,6 +90,8 @@ GEM
       activesupport (>= 4.2.0)
     gravatar_image_tag (1.2.0)
       activesupport (>= 5)
+    groupdate (4.2.0)
+      activesupport (>= 5)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -220,8 +222,9 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
-  gravatar_image_tag
   faker
+  gravatar_image_tag
+  groupdate
   jbuilder (~> 2.5)
   letter_opener
   listen (>= 3.0.5, < 3.2)
