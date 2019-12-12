@@ -182,7 +182,7 @@ p {
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
-    color: white;
+    color: white !important;
     background: #29ACE2;
 }
 ul ul a {
@@ -206,7 +206,7 @@ ul ul a {
 }
 
 .nav-link {
-    color: white;
+    color: white !important;
     display: flex;
     align-items: center;
 }
