@@ -93,9 +93,9 @@
                     <br><br>
                     <form class="form-horizontal">
                         <label for="First_name">Prénom</label>
-                        <%= f.text_field :first_name %> <br>
+                        <%= f.text_field :first_name, class: "form-control" %> <br>
                         <label for="Last_name">Nom</label>
-                        <%= f.text_field :last_name %>
+                        <%= f.text_field :last_name, class: "form-control" %>
                     </form>
                 </div>
             </div>
@@ -119,9 +119,9 @@
                     <br><br>
                     <form class="form-horizontal">
                         <label for="First_name">Votre spécialité</label><br>
-                        <%= f.text_area :specialty %> <br>
+                        <%= f.text_area :specialty, class: "form-control" %> <br>
                         <label for="Last_name">Vos diplômes</label><br>
-                        <%= f.text_area :diploma %>
+                        <%= f.text_area :diploma, class: "form-control" %>
                     </form>
                 </div>
             </div>
@@ -131,7 +131,7 @@
                     <br><br>
                     <form class="form-horizontal">
                         <label for="Your_location">Adresse de votre cabinet</label><br>
-                        <%= f.text_area :adress %>
+                        <%= f.text_area :adress, class: "form-control" %>
                    
                         <br>
                         
