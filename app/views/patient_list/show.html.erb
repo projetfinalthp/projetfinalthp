@@ -3,21 +3,68 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Mes patients</title>
-		<link rel="stylesheet" href="side-navbar.css">
-
+		<!-- <link rel="stylesheet" href="side-navbar.css"> -->
+		<script src="https://kit.fontawesome.com/e398dbe560.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	</head>
+
 	<body>
-		<h1>MES PATIENTS</h1>
-​
-		<!-- alphabetical pagination -->
+
+		<h2 class="text-center">Mes patients</h2>
+		<hr class="accent mb-3">
+		<%= link_to  "Home", practionner_path(params[:id]), class: 'link_color-patient_list' %>
+
+		<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="searchbar">
+				<input class="search_input" type="text" name="" placeholder="Rechercher ...">
+				<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+			</div>
+		</div>
+	</div> <br><br>
+
+		<!-- ########## BARRE DE RECHERCHE A INTEGRER AVEC DU JS ############## -->
+		<!-- <div class="container">
+		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+		<ul id="myUL">
+ 			<li><a href="#">Adele</a></li>
+ 			<li><a href="#">Agnes</a></li>
+
+ 			<li><a href="#">Billy</a></li>
+ 			<li><a href="#">Bob</a></li>
+
+ 			<li><a href="#">Calvin</a></li>
+ 			<li><a href="#">Christina</a></li>
+		 	<li><a href="#">Cindy</a></li>
+		</ul>
+
+		<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+	</div> -->
+	<!-- ########## BARRE DE RECHERCHE A INTEGRER AVEC DU JS ############## -->
+
+
 		<div class="container">
-
 		    <!-- contacts card -->
-		    <div class="card card-default" id="card_contacts">
-​			<% @practionner_patients.each do |patient| %>
-
+				<% @practionner_patients.each do |patient| %>
 		        <div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">
-
 								<ul class="list-group pull-down" id="contact-list">
 		                <li class="list-group-item">
 		                    <div class="row w-100">
@@ -25,7 +72,6 @@
 		                            <img src="http://demos.themes.guide/bodeo/assets/images/users/m101.jpg" alt="Mike Anamendolla" class="rounded-circle mx-auto d-block img-fluid">
 		                        </div>
 		                        <div class="col-12 col-sm-6 col-md-9 text-center text-sm-left">
-		                            <span class="fa fa-mobile fa-2x text-success float-right pulse" title="online now"></span>
 																<label class="name lead">	<%= patient.first_name %> <%= patient.last_name%> </label>
 																<br>
 		                            <span class="fa fa-map-marker fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="5842 Hillcrest Rd"></span>
@@ -37,7 +83,7 @@
 		                            <span class="fa fa-envelope fa-fw text-muted" data-toggle="tooltip" data-original-title="" title=""></span>
 		                            <span class="text-muted small text-truncate"><%= patient.email %></span>
 																<br>
-																<a href="#" class="card-link float-right">Afficher plus de détails</a>
+																<%= link_to "Afficher plus de détail", patient_path(patient.id) %>
 		                        </div>
 		                    </div>
 		                </li>
@@ -45,7 +91,6 @@
 		            <!--/contacts list-->
 ​			       </div>
 ​						<% end %>
-		    </div>
 		</div>
 
 	</body>
