@@ -1,6 +1,10 @@
 <h1>PAGE DASHBOARD</h1>
 
-<%= link_to "MON PROFIL", patients_path %>
+<% if current_patient === Patient.find(params[:id]) %>
+	<%= link_to "MON PROFIL", patients_path %>
+<% else %>
+	<h4>view d'un practionner</h4>
+<% end %>
 
 <br>
 <br>
