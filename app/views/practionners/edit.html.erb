@@ -65,7 +65,6 @@
 
 
 
-<h3> FORM </h3>
 <% if @practionner.errors.any? %>
 <p>Erreurs lors de la modifications : </p>
 <ul>
@@ -75,74 +74,28 @@
 </ul>
 <% end %>
 
-<%= form_for @practionner do |f| %>
-<p>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-</p>
-
-<p>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-</p>
-
-<p>
-    <%= f.label :sexe %>
-    <%= f.text_field :sexe %>
-</p>
-
-<p>
-    <%= f.label :specialty %>
-    <%= f.text_area :specialty %>
-</p>
-
-<p>
-    <%= f.label :diploma %>
-    <%= f.text_area :diploma %>
-</p>
-
-<p>
-    <%= f.label :certifications %>
-    <%= f.text_area :certifications %>
-</p>
-
-<p>
-    <%= f.label :adress %>
-    <%= f.text_field :adress %>
-</p>
-
-<p>
-    <%= f.submit "Mettre à jour" %>
-</p>
-<% end %>
-
-
-
-
-
-
 <div id="content">
 
 <section class="page-section" id="editprofile">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
 <div class="mainbody container-fluid">
-
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h1 class="panel-title pull-left" style="font-size:30px;">Mon profil</h1>
                 </div>
             </div>
+            <%= form_for @practionner do |f| %>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3 class="panel-title pull-left">Votre nom</h3>
                     <br><br>
                     <form class="form-horizontal">
                         <label for="First_name">Prénom</label>
-                        <input type="text" class="form-control" id="First_name" placeholder="Prénom" > <br>
+                        <%= f.text_field :first_name %> <br>
                         <label for="Last_name">Nom</label>
-                        <input type="email" class="form-control" id="Last_name" placeholder="Nom" >
+                        <%= f.text_field :last_name %>
                     </form>
                 </div>
             </div>
@@ -165,10 +118,10 @@
                     <h3 class="panel-title pull-left">Vos certifications</h3>
                     <br><br>
                     <form class="form-horizontal">
-                        <label for="First_name">Votre spécialité</label>
-                        <input type="text" class="form-control" id="First_name" placeholder="Spécialité" > <br>
-                        <label for="Last_name">Vos diplômes</label>
-                        <input type="email" class="form-control" id="Last_name" placeholder="Diplômes" >
+                        <label for="First_name">Votre spécialité</label><br>
+                        <%= f.text_area :specialty %> <br>
+                        <label for="Last_name">Vos diplômes</label><br>
+                        <%= f.text_area :diploma %>
                     </form>
                 </div>
             </div>
@@ -177,8 +130,8 @@
                     <h3 class="panel-title pull-left">Informations</h3>
                     <br><br>
                     <form class="form-horizontal">
-                        <label for="Your_location">Adresse de votre cabinet</label>
-                        <input type="text" class="form-control" id="Your_location" placeholder="Adresse">
+                        <label for="Your_location">Adresse de votre cabinet</label><br>
+                        <%= f.text_area :adress %>
                    
                         <br>
                         
@@ -190,12 +143,14 @@
                 <div class="panel-body">
                     <h3 class="panel-title pull-left">Sauvegarder mon profil</h3>
                     <br><br>
-                    <button class="btn btn-primary"><i class="fa fa-fw fa-check" aria-hidden="true"></i> Editer</button>
+                    <%= f.submit "Mettre à jour" %>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<% end %>
+
 
 
 </section>
