@@ -1,22 +1,90 @@
-<h1>
-	MON PROFIL
-</h1>
+<head>
 
-<br>
-<br>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="side-navbar.css">
+
+    <script> $(document).ready(function () {
+
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+
+    });
+    </script>
 
 <% @id_user = current_practionner.id %>
-<%= link_to "Dashbord", practionner_path(@id_user) %>
 
-<br>
-<br>
-<%= current_practionner.first_name %>
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>BIPOLINK</h3>
+        </div>
 
-<br>
-<br>
-<%= current_practionner.last_name %>
+        <ul class="list-group">
 
-<br>
-<br>
+            <li>
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+            </button>
+                <div id="navbar-text-color"><%= link_to "HOME", practionners_path %></div>
+                <%= link_to "MON PROFIL", practionners_path %>
+            </li>
+        </ul>
 
-<%= link_to "Editer mon profil", edit_practionner_path(@id_user) %>
+    </nav>
+
+<section class="page-section bg-light" id="editprofile">
+  <div class="container">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <img class="mx-auto rounded-circle" src="https://i.goopics.net/nyPvX.png" alt=""><br><br>
+          <h3 class="section-subheading"><%= current_practionner.first_name %> <%= current_practionner.last_name %></h3>
+          <p class="text-muted"><%= current_practionner.specialty %></p>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+                Informations
+            </div>
+            <div class="card-body">
+              <p><%= current_practionner.diploma %></p>
+              <p><%= current_practionner.certifications %></p>
+            </div>
+            <div class="card-header">
+                Adresse
+            </div>
+            <div class="card-body">
+              <p><%= current_practionner.adress %></p>
+            </div>
+            <div class="card-header">
+                Contact
+            </div>
+            <div class="card-body">
+              <p><%= current_practionner.email %></p>
+            </div>
+          </div>
+          <br>
+            <center><button class="btn btn-dark btn-xl text-uppercase js-scroll-trigger"> <%= link_to "Editer mon profil", edit_practionner_path(@id_user) %></button></center>
+</a></center>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+

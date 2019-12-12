@@ -165,8 +165,8 @@ p {
 }
 
 #sidebar ul p {
-    color: white;
-    padding: 10px;
+    color: white !important;
+    padding: 10px !important;
 }
 
 #sidebar ul li a {
@@ -176,7 +176,7 @@ p {
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
-    color: white;
+    color: white !important;
     background: #29ACE2;
 }
 ul ul a {
@@ -194,7 +194,7 @@ ul ul a {
 }
 
 .nav-link {
-    color: white;
+    color: white !important;
     display: flex;
     align-items: center;
 }
@@ -287,7 +287,7 @@ ul ul a {
     }
 
     .link_color-icon {
-        color: white; !important;
+        color: white !important;
         }
     
         .link_color-icon:hover {
