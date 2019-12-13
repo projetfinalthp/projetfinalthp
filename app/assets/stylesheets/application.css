@@ -16,6 +16,7 @@
 
 /* ################################################ CSS de la typo ################################################ */
 
+
 h1 {
   color: #696969;
   font-family: roboto;
@@ -76,3 +77,16 @@ p {
     text-align: center!important;
 }
 
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+#content {
+  width: 100%;
+}
+
+.container {
+  padding: 30px;
+}

@@ -1,0 +1,24 @@
+<nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="mb-0 text-black d-none d-lg-inline-block">Bonjour Docteur <%= current_practionner.last_name %> !</a>
+    <!-- User -->
+    <div class="dropdown">
+      <img src="https://i.redd.it/6onq25y0sh311.jpg" class="float-left rounded-circle avatar-sm">
+      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Mon compte
+      </button>
+      <div class="dropdown-menu">
+         <%= link_to "Mon profil", practionners_path %><br>
+         <%= link_to "Paramètres", edit_practionner_path(current_practionner.id) %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "Se déconnecter", destroy_patient_session_path, method: :delete %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Dropdown Toggle -->
+<script>
+  $('.dropdown-toggle').dropdown()
+</script>
