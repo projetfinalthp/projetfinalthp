@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_12_09_152801) do
     t.string "city"
     t.string "sexe"
     t.datetime "birth"
-    t.string "phone"
+    t.integer "phone"
     t.index ["email"], name: "index_patients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
   end
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 2019_12_09_152801) do
     t.text "specialty"
     t.string "sexe"
     t.string "adress"
+    t.integer "phone"
     t.text "diploma"
     t.text "certifications"
     t.index ["email"], name: "index_practionners_on_email", unique: true
