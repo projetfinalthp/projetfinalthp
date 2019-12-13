@@ -1,55 +1,49 @@
-<% @id_user = current_practionner.id %>
-
-<section class="page-section bg-light" id="editprofile">
+<%= render 'layouts/side-navbar-doctor' %>
+<!-- Page Content  -->
+<div id="content">
+  <%= render 'layouts/top-navbar-doctor' %>
   <div class="container">
-    <div class="col-lg-12">
-      <div class="row">
-        <div class="col-md-6 text-center">
-          <img class="mx-auto rounded-circle" src="https://i.goopics.net/nyPvX.png" alt=""><br><br>
-          <h3 class="section-subheading"><%= current_practionner.first_name %> <%= current_practionner.last_name %></h3>
-          <p class="text-muted"><%= current_practionner.specialty %></p>
-        </div>
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">
-                Informations
-            </div>
-            <div class="card-body">
-              <p><%= current_practionner.diploma %></p>
-              <p><%= current_practionner.certifications %></p>
-            </div>
-            <div class="card-header">
-                Adresse
-            </div>
-            <div class="card-body">
-              <p><%= current_practionner.adress %></p>
-            </div>
-            <div class="card-header">
-                Contact
-            </div>
-            <div class="card-body">
-              <p><%= current_practionner.email %></p>
-            </div>
+    <h2 class="text-center">Mon profil</h2>
+      <hr class="accent mb-3">
+    <div class="line"></div>
+    <% @id_user = current_practionner.id %>
+    <section class="page-section bg-light" id="editprofile">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-md-6 text-center">
+            <img class="mx-auto rounded-circle" src="https://i.goopics.net/nyPvX.png" alt=""><br>
+            <br>
+            <h3 class="section-subheading"><%= current_practionner.first_name %> <%= current_practionner.last_name %></h3>
+            <p class="text-muted"><%= current_practionner.specialty %></p>
           </div>
-          <br>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                Informations
+              </div>
+              <div class="card-body">
+                <p><%= current_practionner.diploma %></p>
+                <p><%= current_practionner.certifications %></p>
+              </div>
+              <div class="card-header">
+                Adresse
+              </div>
+              <div class="card-body">
+                <p><%= current_practionner.adress %></p>
+              </div>
+              <div class="card-header">
+                Contact
+              </div>
+              <div class="card-body">
+                <p><%= current_practionner.email %></p>
+              </div>
+            </div>
+            <br>
             <center><button class="btn btn-dark btn-xl text-uppercase js-scroll-trigger"> <%= link_to "Editer mon profil", edit_practionner_path(@id_user) %></button></center>
-</a></center>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </div>
-</section>
-
-
-
-
-
-<br>
-<br>
-
-<% @id_user = current_practionner.id %>
-<%= link_to "Dashbord", practionner_path(@id_user) %>
-
-
-
-
+</div>

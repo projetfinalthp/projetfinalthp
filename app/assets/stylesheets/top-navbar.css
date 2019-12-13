@@ -1,6 +1,6 @@
 #navbar-main {
     background-color: #FAFAFA;
-    width: 100%;
+    margin: 0;
 }
 
 .avatar-sm {
@@ -8,8 +8,3 @@
     height: 36px;
     font-size: .875rem;
 }
-
-
-#content {
-    width: 100%;
-  }

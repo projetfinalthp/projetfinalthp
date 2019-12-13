@@ -16,6 +16,7 @@
 
 /* ################################################ CSS de la typo ################################################ */
 
+
 h1 {
   color: #696969;
   font-family: roboto;
@@ -48,6 +49,7 @@ p {
     text-align: center;
     color: #FFFFFF;
     padding: 50px 0;
+    margin: auto;
     background-color: #29ace2;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -60,6 +62,7 @@ p {
     color: #696969;
     padding: 100px 0;
     font-family: montserrat;
+    width: 100%;
 }
 
 
@@ -67,10 +70,23 @@ p {
     padding: 100px 0;
     margin-bottom: 50px;
     color: #696969;
-
+    margin: auto;
 }
 
 .text-center {
     text-align: center!important;
 }
 
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+#content {
+  width: 100%;
+}
+
+.container {
+  padding: 30px;
+}
