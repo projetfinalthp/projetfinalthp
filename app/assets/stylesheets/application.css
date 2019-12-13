@@ -58,13 +58,43 @@ p {
     background: linear-gradient(to bottom, rgba(17,73,145,1) 17%, rgba(41,163,226,1) 100%);
 }
 
+.button_color-bipolink {
+    color: #696969 !important;
+}
+
+.link_color-bipolink {
+    color: white !important;
+}
+
+.button_color-profile {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 40px;
+  background: rgb(17,73,145);
+  background: linear-gradient(90deg, rgba(17,73,145,1) 17%, rgba(41,163,226,1) 100%);
+  border-radius: 4px;
+
+  font-family: Roboto-Bold;
+  font-size: 14px;
+  color: #fff;
+  line-height: 16px;
+  text-transform: uppercase;
+
+}
+
 #editprofile {
     color: #696969;
     padding: 100px 0;
     font-family: montserrat;
     width: 100%;
 }
-
 
 .page-section {
     padding: 100px 0;
