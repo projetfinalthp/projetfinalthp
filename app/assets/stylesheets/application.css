@@ -15,10 +15,7 @@
  */
 
 /* ################################################ CSS de la typo ################################################ */
-body {
-  width: 100%;
-  margin: 0%;    
-}
+
 
 h1 {
   color: #696969;
@@ -80,11 +77,16 @@ p {
     text-align: center!important;
 }
 
-.container {
-  max-width: 100% !important;
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
 }
 
-.content{
-  width: 100% !important;
+#content {
+  width: 100%;
+}
+
+.container {
   padding: 30px;
 }

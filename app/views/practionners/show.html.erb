@@ -1,20 +1,21 @@
 <%= render 'layouts/side-navbar-doctor' %>
-<%= render 'layouts/top-navbar-doctor' %>
-<div class="container">
-  <div class="row">
-    <div id="content">
-     <br>
-      <h1>MON DASHBOARD</h1>
-      <br>
-      <% @patients_of_the_day.each do |patient_of_the_day| %>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title"><%= patient_of_the_day.first_name %></h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      <% end %>
+<!-- Page Content  -->
+<div id="content">
+  <%= render 'layouts/top-navbar-doctor' %>
+
+  <div class="container">
+  <h1>MON DASHBOARD</h1>
+  
+  <div class="line"></div>
+  <% @patients_of_the_day.each do |patient_of_the_day| %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title"><%= patient_of_the_day.first_name %></h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
     </div>
-</div>
+  <% end %>
+  </div>
+  
 </div>
