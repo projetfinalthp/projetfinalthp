@@ -1,23 +1,35 @@
-<h1>PAGE DASHBOARD</h1>
-
-<%= link_to "MON PROFIL", patients_path %>
-
-<br>
-
-<%= link_to "MES SOIGNANTS/MES RDVs", doctor_appointment_list_path %>
-
-<br>
-<br>
-<br>
-<br>
-
-<h4>
-	Patient mood
-</h4>
-<%= line_chart @patient_day.group_by_day(:created_at).sum(:mood) %>
-
-<br> 
-<h4>
-	Patient hours of sleep
-</h4>
-<%= line_chart @patient_day.group_by_day(:created_at).sum(:hours_of_sleep) %>
+<% if current_patient === Patient.find(params[:id]) %>
+  <%= render 'layouts/side-navbar-patient' %>
+  <!-- Page Content  -->
+  <div id="content">
+    <%= render 'layouts/top-navbar-patient' %>
+    <div class="container">
+    <h2 class="text-center">Mon dashboard</h2>
+        <hr class="accent mb-3">
+        <h4>Ma courbe d'humeur</h4>
+        <%= line_chart @patient_day.group_by_day(:created_at).sum(:mood) %>
+        <br>
+        <h4>Mon sommeil</h4>
+        <%= line_chart @patient_day.group_by_day(:created_at).sum(:hours_of_sleep) %>
+      </div>
+    </div>
+  </div>
+<% else %>
+    <%= render 'layouts/side-navbar-doctor' %>
+  <!-- Page Content  -->
+  <div id="content">
+    <%= render 'layouts/top-navbar-doctor' %>
+    <div class="container">
+    <h2 class="text-center">
+          <%= "Dashboard du patient: #{Patient.find(params[:id]).first_name} #{Patient.find(params[:id]).last_name}" %>
+        </h2>
+          <hr class="accent mb-3">
+          <h4>Courbe d'humeur</h4>
+          <%= line_chart @patient_day.group_by_day(:created_at).sum(:mood) %>
+          <br>
+          <h4>Sommeil</h4>
+        <%= line_chart @patient_day.group_by_day(:created_at).sum(:hours_of_sleep) %>
+      </div>
+    </div>
+  </div>
+<% end %>
