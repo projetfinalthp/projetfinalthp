@@ -5,12 +5,14 @@
       <img src="https://i.ibb.co/PmfTM9j/Moodlinkv3.png" class="logo-size">
     </div>
     <ul class="list-group">
-    <li>
+     <li class="active">
+     <div id="sidebarCollapse">
       <div id="nav-icon3" id="sidebarCollapse">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
+      </div>
       </div>
       <div class="navbar-text-color">
         <div class="nav-link">
@@ -35,3 +37,12 @@
       </li>
     </ul>
   </nav>
+
+<!-- Sidebar Toggle JS script-->
+<script>
+    $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+</script>
