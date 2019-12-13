@@ -21,7 +21,6 @@
             <br>
             Adresse</p>
           <div class="card-link"><%= link_to "VOIR PLUS", practionner_path %></div>
-          <a href="#" class="card-link">Prendre RDV</a>
         </div>
       </div>
     <% end %>
@@ -33,14 +32,13 @@
           <img src="https://bit.ly/352vL1I" class="float-left rounded-circle avatar-md">
           <div class="content">
             <h5 class="card-title">Dr. <%= practionner.first_name %> <%= practionner.last_name %></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Psychiatre</h6>
+            <h6 class="card-subtitle mb-2 text-muted"><%= practionner.specialty %></h6>
             <br>
           </div>
           <p class="card-text">Conventionné secteur 1
             <br>
-            Adresse</p>
-          <div class="card-link"><%= link_to "VOIR PLUS", practionner_path %></div>
-          <a href="#" class="card-link">Prendre RDV</a>
+            <%= practionner.adress%></p>
+          <div class="card-link"><%= link_to "VOIR PLUS", practionners_path %></div>
         </div>
       <% end %>
     </div>
