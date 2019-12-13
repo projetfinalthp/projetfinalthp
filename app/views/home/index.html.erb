@@ -33,7 +33,7 @@
           <img class="mx-auto rounded-circle" src="https://i.goopics.net/3KnvQ.png" alt=""><br><br>
             <div class="text-center">            
               <% if patient_signed_in? %>                 
-                <%= link_to "Se déconnecter", destroy_patient_session_path, method: :delete %>             
+                <%= link_to "Se déconnecter", destroy_patient_session_path, class:"link_color-bipolink", method: :delete %>             
               <% else %>
                 <button class="btn btn-light btn-xl text-uppercase js-scroll-trigger"> <%= link_to "Connexion",new_patient_session_path, class:"button_color-bipolink" %></button> 
                 <p><%= link_to "Pas encore inscrit ?", new_patient_registration_path, class:"link_color-bipolink" %></p>
@@ -46,7 +46,7 @@
             <img class="mx-auto rounded-circle" src="https://i.goopics.net/nyPvX.png" alt=""><br><br>
             <div class="text-center">             
               <% if practionner_signed_in? %>                  
-                <%= link_to "Se déconnecter", destroy_practionner_session_path, method: :delete %>                  
+                <%= link_to "Se déconnecter", destroy_practionner_session_path, class:"link_color-bipolink", method: :delete %>                  
               <% else %>                  
                 <button class="btn btn-light text-uppercase js-scroll-trigger"> <%= link_to "Connexion", new_practionner_session_path, class:"button_color-bipolink" %></button>      
                 <p class="text-muted"><%= link_to "Pas encore inscrit ?", new_practionner_registration_path, class:"link_color-bipolink" %>      
