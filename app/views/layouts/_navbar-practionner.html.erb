@@ -5,7 +5,7 @@
   </button>
   <div class="dropdown-menu">
     <%= link_to "Mon dashboard", practionner_path(current_practionner.id) %><br>
-    <%= link_to "Paramètres", edit_practionner_path(current_practionner.id) %>
+    <%= link_to "Paramètres", edit_practionner_registration_path(current_practionner.id) %>
     <div class="dropdown-divider"></div>
     <%= link_to "Se déconnecter", destroy_patient_session_path, method: :delete %>
   </div>
