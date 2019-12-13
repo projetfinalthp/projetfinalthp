@@ -5,44 +5,43 @@
       <img src="https://i.ibb.co/PmfTM9j/Moodlinkv3.png" class="logo-size">
     </div>
     <ul class="list-group">
-     <li class="active">
-     <div id="sidebarCollapse">
-      <div id="nav-icon3" id="sidebarCollapse">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      </div>
-      <div class="navbar-text-color">
-        <div class="nav-link">
-          <div class="media align-items-center">
-            <%= link_to ('<i class="far fa-calendar-plus fa-2x icon-perso"></i>'.html_safe), practionner_path(current_practionner.id), class: "link_color-icon" %>
-            <%= link_to "Mon dashboard", practionner_path(current_practionner.id), class: 'link_color-sidebar' %>
+      <li class="active">
+        <div id="sidebarCollapse">
+          <div id="nav-icon3" id="sidebarCollapse">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
-        <div class="nav-link">
-          <div class="media align-items-center">
-            <%= link_to ('<i class="fas fa-users fa-2x icon-perso"></i>'.html_safe), patient_list_path(current_practionner.id), class: "link_color-icon" %>
-            <%= link_to "Mes patients", patient_list_path(current_practionner.id), class: 'link_color-sidebar' %>
+        <div class="navbar-text-color">
+          <div class="nav-link">
+            <div class="media align-items-center">
+              <%= link_to ('<i class="far fa-calendar-plus fa-2x icon-perso"></i>'.html_safe), practionner_path(current_practionner.id), class: "link_color-icon" %>
+              <%= link_to "Mon dashboard", practionner_path(current_practionner.id), class: 'link_color-sidebar' %>
+            </div>
+          </div>
+          <div class="nav-link">
+            <div class="media align-items-center">
+              <%= link_to ('<i class="fas fa-users fa-2x icon-perso"></i>'.html_safe), patient_list_path(current_practionner.id), class: "link_color-icon" %>
+              <%= link_to "Mes patients", patient_list_path(current_practionner.id), class: 'link_color-sidebar' %>
+            </div>
+          </div>
+          <div class="nav-link">
+            <div class="media align-items-center">
+              <%= link_to ('<i class="fas fa-user-md fa-2x icon-perso"></i>'.html_safe), practionners_path, class: "link_color-icon" %>
+              <%= link_to "Mon profil", practionners_path, class: 'link_color-sidebar' %>
+            </div>
           </div>
         </div>
-        <div class="nav-link">
-          <div class="media align-items-center">
-            <%= link_to ('<i class="fas fa-user-md fa-2x icon-perso"></i>'.html_safe), practionners_path, class: "link_color-icon" %>
-            <%= link_to "Mon profil", practionners_path, class: 'link_color-sidebar' %>
-          </div>
-        </div>
-      </div>
       </li>
     </ul>
   </nav>
-
-<!-- Sidebar Toggle JS script-->
-<script>
+  <!-- Sidebar Toggle JS script-->
+  <script>
     $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });
         });
-</script>
+  </script>

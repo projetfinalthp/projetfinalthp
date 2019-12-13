@@ -3,18 +3,15 @@
     <div class="login100-form validate-form">
       <h2 class="login100-form-title p-b-37">Connexion</h2>
       <div class="">
-
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "email" %>
           </div>
           <br>
-
           <div class="field">
             <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "mot de passe" %>
           </div>
           <br>
-
           <% if devise_mapping.rememberable? %>
             <div class="field">
               <%= f.check_box :remember_me %>
@@ -22,15 +19,13 @@
             </div>
           <% end %>
           <br>
-
           <div class="actions">
             <%= f.submit "connexion", class:"login100-form-btn float-left" %>
-          </div> <br>
-        <% end %> <br> <br>
-
-
-
+          </div>
+           <br>
+        <% end %> <br>
+         <br>
         <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
-</div>

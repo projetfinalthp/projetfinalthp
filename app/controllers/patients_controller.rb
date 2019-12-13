@@ -18,7 +18,7 @@ before_action :authorize_user, except: [:index]
     if @patient = Patient.update(patient_params)
     redirect_to edit_patient_path
     else
-    render 'edit'
+    render 'modifier'
     end 
   end
 
@@ -43,7 +43,7 @@ before_action :authorize_user, except: [:index]
     end
 
     if @count != 1
-      flash[:danger] = "Please log in."
+      flash[:danger] = "Veuillez vous connecter."
       redirect_to new_patient_session_path
     else
     end

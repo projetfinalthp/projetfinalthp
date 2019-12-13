@@ -2,15 +2,18 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link rel="stylesheet" href="practionner_welcome_email.css">
   </head>
   <body>
-    <h1>Bonjour Dr <%= @user.last_name %> et bienvenue chez nous !</h1>
+    <img src="https://i.ibb.co/PmfTM9j/Moodlinkv3.png" class="logo-size">
+    <br>
+    <h1>Bonjour Dr <%= @user.last_name %> et bienvenue sur Bipolink !</h1>
     <p>
-      Vous vous êtes isncrit sur monsite.fr en utilisant l'e-mail suivant : <%= @user.email %>.
+      L'application Bipolink est un outil vous permettant d'améliorer le diagnostique et le suivi de la bipolarité de vos patients.
     </p>
     <p>
-      Pour accéder à votre espace client, connectez-vous via : <%= @url %>.
+      Pour accéder à votre dashboard, connectez-vous via : <%= @url %> avec votre adresse e-mail : <%= @user.email %>..
     </p>
     <p> À très vite sur finalprojectthp-staging.herokuapp.com !
-  </body>
-</html>
+    </body>
+  </html>

@@ -1,23 +1,23 @@
 <div class="container-login100">
   <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
     <div class="login100-form validate-form">
-      <h2 class="login100-form-title p-b-37">Mot de passe oublié ?</h2><br>
+      <h2 class="login100-form-title p-b-37">Mot de passe oublié ?</h2>
+      <br>
       <div class="">
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control", placeholder: "Votre adresse email" %>
-  </div><br>
-
-  <div class="actions">
-    <%= f.submit "Envoyez moi les instructions", class: "login100-form-btn float-left" %>
-  </div> <br>
-<% end %> <br><br>
-
-<%= render "devise/shared/links" %>
-</div>
-</div>
-</div>
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="field">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control", placeholder: "Votre adresse email" %>
+          </div>
+          <br>
+          <div class="actions">
+            <%= f.submit "Envoyez moi les instructions", class: "login100-form-btn float-left" %>
+          </div>
+           <br>
+        <% end %> <br>
+        <br>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
 </div>
