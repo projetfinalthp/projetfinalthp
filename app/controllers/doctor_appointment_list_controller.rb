@@ -4,7 +4,10 @@ before_action :authorize_user
   def show
   	@patient_practionners = Patient.find(params[:id]).practionners
   	@patient_appointments = Patient.find(params[:id]).appointments
+    @appointment = Appointment.new
   end
+
+
 
   private
 

@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :patient_list
   resources :doctor_appointment_list
   resources :days
+  resources :appointments
 
 end
