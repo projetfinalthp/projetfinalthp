@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 gem 'table_print'
 gem 'devise'
+gem 'dotenv'
 
 # Gem to generate charts
 gem 'chartkick'

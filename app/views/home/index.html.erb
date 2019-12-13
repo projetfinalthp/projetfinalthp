@@ -7,19 +7,31 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
-        </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav text-uppercase ml-auto">
-              <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#application">Application</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#bipolarity">La maladie</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#application">Application</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#bipolarity">La maladie</a>
+          </li>
+                <li class="nav-item">
+             <%if patient_signed_in? %>
+             <%= render 'layouts/navbar-patient' %>
+             <% end %>
+          </li>
+          </li>
+                <li class="nav-item">
+             <%if practionner_signed_in? %>
+             <%= render 'layouts/navbar-practionner' %>
+             <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">BipoLink</h2>
@@ -70,7 +82,8 @@
         </div>
         <div class="col-md-6">
           <h3>Un suivi facile en quelques clics !</h3><br>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p> <br> <br>
+          <p class="text-muted">Bipolink, votre application compagnon pour vous suivre au quotidien.<br><br> L'application vous permet de renseigner un ensemble d'informations pour suivre l'évolution de votre état physique et mental. Si vous le souhaitez, vous pourrez égaleemnt partager ces informations avec vos soignants. Des données qui permettront d'affiner le diagnostic et d'améliorer le suivi de la maldie.
+          </p> <br> <br>
           <h4>Télécharger l'application :</h4><br>
           <div class="applications">
             <a target="_blank" href="https://www.apple.com/fr/ios/app-store/">
@@ -90,22 +103,25 @@
       <div class="row">
         <div class="col-lg-12">
           <h2 class="section-heading text-uppercase">La bipolarité</h2> <br>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p> <br> <br>
+          <p class="text-muted">Maladie mentale chronique, les troubles bipolaires touchent entre 1 et 2,5 % de la population. Ils apparaissent majoritairement entre 15 et 25 ans et persistent toute la vie. Les malades présentant une espérance de vie réduite de 10 ans en moyenne par rapport à la population générale. Les épisodes dépressifs peuvent fréquemment déboucher sur des tentatives de suicide : 20% des patients bipolaires non traités décèdent par suicide. Par ailleurs, les troubles bipolaires s’accompagnent d’une forte comorbidité, c’est-à-dire que d’autres troubles se greffent à la maladie (alcoolisme, diabète, dysthyroïdie, etc.), faisant par exemple encourir aux patients le risque de succomber à d’autres pathologies, une maladie cardiovasculaire par exemple. Enfin, les conduites à risque (sexualité, addictions, dépenses) sont fréquentes et associées au handicap.
+          <br><br>
+          Mais c’est le retard de diagnostic qui pénalise le plus les patients. On estime à 10 ans en moyenne le temps écoulé entre un premier épisode et l’instauration d’un traitement adapté. Ce décalage s’explique par la méconnaissance de la maladie de la part des médecins, qui associent souvent les symptômes de la bipolarité à ceux de la dépression. Si bien qu’actuellement, 40 % des dépressifs pourraient en réalité souffrir de bipolarité sans être diagnostiqués.</p> 
+          <br> <br>
         </div>
       </div>
       <h2 class="section-heading text-uppercase">En quelques chiffres</h2> <br> <br> <br>
       <div class="row text-center">
         <div class="col-md-4">
-          <h2>2800</h4>
-          <p class="text-muted">personnes en France</p>
+          <h2>1 000 000 </h4>
+          <p class="text-muted">de patients bipolaires estimés en France</p>
         </div>
         <div class="col-md-4">
-          <h2>72%</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <h2>10 ans</h4>
+          <p class="text-muted">le temps écoulé entre un premier épisode et l’instauration d’un traitement adapté</p>
         </div>
         <div class="col-md-4">
-          <h2>5</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <h2>6 ème</h4>
+          <p class="text-muted">au rang mondial des handicaps</p>
         </div>
       </div>
     </div>
