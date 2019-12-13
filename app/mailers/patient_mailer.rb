@@ -2,13 +2,13 @@ class PatientMailer < ApplicationMailer
   default from: 'contact@finalprojectthp-staging.herokuapp.com'
  
   def welcome_email(user)
-    #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
+    #we keep user to use it in the view 
     @user = user 
 
-    #on définit une variable @url qu'on utilisera dans la view d’e-mail
+    #we define a variable url to use it in the view
     @url  = 'https://finalprojectthp-staging.herokuapp.com' 
 
-    # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
+    #It is this function that allows us to send the email by defining the email recipient and subject
     mail(to: @user.email, subject: 'Bienvenue chez nous !') 
   end
 end

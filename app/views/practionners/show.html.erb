@@ -2,23 +2,21 @@
 <!-- Page Content  -->
 <div id="content">
   <%= render 'layouts/top-navbar-doctor' %>
-
   <div class="container">
-  <h2 class="text-center">Mon dashboard</h2>
-      <hr class="accent mb-3">
-  <div class="line"></div>
-  <br>
-  <h5>Mes rendez-vous du jour</h5>
-  <% @patients_of_the_day.each do |patient_of_the_day| %>
-    <div class="card mb-3">
-      <div class="card-body">
-      <img src="https://i.redd.it/6onq25y0sh311.jpg" class="float-left rounded-circle avatar-md">
-        <h5 class="card-title"><%= patient_of_the_day.first_name %> <%= patient_of_the_day.last_name %></h5>
-        <p class="card-text">Dernières notes : Période de stabilisation de l'humeur du patient</p>
-        <p class="card-text"><small class="text-muted"> <%= Time.now.strftime("%m/%d/%Y at %I:%M%p") %> </small></p>
+    <h2 class="text-center">Mon dashboard</h2>
+    <hr class="accent mb-3">
+    <div class="line"></div>
+    <br>
+    <h5>Mes rendez-vous du jour</h5>
+    <% @patients_of_the_day.each do |patient_of_the_day| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <img src="https://i.redd.it/6onq25y0sh311.jpg" class="float-left rounded-circle avatar-md">
+          <h5 class="card-title"><%= patient_of_the_day.first_name %> <%= patient_of_the_day.last_name %></h5>
+          <p class="card-text">Dernières notes : Période de stabilisation de l'humeur du patient</p>
+          <p class="card-text"><small class="text-muted"> <%= Time.now.strftime("%m/%d/%Y at %I:%M%p") %> </small></p>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
   </div>
-  
 </div>

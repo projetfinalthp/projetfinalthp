@@ -2,6 +2,7 @@ class PractionnersController < ApplicationController
 before_action :authorize_user, except: [:index]
 
   def index
+    @id_user = current_practionner.id
   end
 
   def show
@@ -17,7 +18,7 @@ before_action :authorize_user, except: [:index]
     if @practionner = Practionner.update(practionner_params)
     redirect_to edit_practionner_path
     else
-    render 'edit'
+    render 'modifier'
     end 
   end
   
@@ -31,7 +32,7 @@ before_action :authorize_user, except: [:index]
 	def authorize_user 
     @user = Practionner.find(params[:id])
     unless current_practionner == @user
-      flash[:danger] = "Please log in."
+      flash[:danger] = "Veuillez vous connecter."
       redirect_to new_practionner_session_path
     end
   end

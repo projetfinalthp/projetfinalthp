@@ -1,0 +1,27 @@
+body {
+    background: rgb(17,73,145);
+    background: linear-gradient(to bottom, rgba(17,73,145,1) 17%, rgba(41,163,226,1) 100%);
+}
+
+h1 {
+    color:yellow;
+    font-family: roboto;
+  }
+  
+  h2 {
+    font-family: roboto;
+  }
+  
+  h3 {
+    font-family: montserrat;
+  }
+  
+  h4 {
+    font-family: montserrat;
+  }
+  
+  p {
+    font-family: montserrat;
+    color: #696969;
+  }
+  
