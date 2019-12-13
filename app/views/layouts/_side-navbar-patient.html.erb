@@ -1,53 +1,49 @@
-<!-- Sidebar  -->
-
-<nav id="sidebar">
-  <div class="sidebar-header">
-    <img src="https://i.ibb.co/PmfTM9j/Moodlinkv3.png" class="logo-size">
-  </div>
-  <ul class="list-group">
-    <li>
-      <div id="sidebarCollapse">
-        <div id="nav-icon3" id="sidebarCollapse">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-      <div class="navbar-text-color">
-        <div class="nav-link">
-          <div class="media align-items-center">
-            <%= link_to ('<i class="fas fa-chart-bar fa-2x"></i>'.html_safe), patient_path(current_patient.id), class: "link_color-icon" %>
-            <%= link_to "Mon dashboard", patient_path(current_patient.id), class: 'link_color-sidebar' %>
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <img src="https://i.ibb.co/PmfTM9j/Moodlinkv3.png" class="logo-size">
+    </div>
+    <ul class="list-group">
+      <li>
+        <div id="sidebarCollapse">
+          <div id="nav-icon3" id="sidebarCollapse">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
-        <div class="nav-link">
-          <div class="media align-items-center">
-            <%= link_to ('<i class="fas fa-user-md fa-2x icon-perso"></i>'.html_safe), doctor_appointment_list_path(current_patient.id), class: "link_color-icon" %>
-            <%= link_to "Mes soignants et RDV", doctor_appointment_list_path(current_patient.id), class: 'link_color-sidebar' %>
+        <div class="navbar-text-color">
+          <div class="nav-link">
+            <div class="media align-items-center">
+              <%= link_to ('<i class="fas fa-chart-bar fa-2x"></i>'.html_safe), patient_path(current_patient.id), class: "link_color-icon" %>
+              <%= link_to "Mon dashboard", patient_path(current_patient.id), class: 'link_color-sidebar' %>
+            </div>
+          </div>
+          <div class="nav-link">
+            <div class="media align-items-center">
+              <%= link_to ('<i class="fas fa-user-md fa-2x icon-perso"></i>'.html_safe), doctor_appointment_list_path(current_patient.id), class: "link_color-icon" %>
+              <%= link_to "Mes soignants et RDV", doctor_appointment_list_path(current_patient.id), class: 'link_color-sidebar' %>
+            </div>
+          </div>
+          <div class="nav-link">
+            <div class="media align-items-center">
+              <%= link_to ('<i class="fas fa-user fa-2x icon-perso"></i>'.html_safe), patients_path, class: "link_color-icon" %>
+              <%= link_to "Mon profil", patients_path, class: 'link_color-sidebar' %>
+            </div>
           </div>
         </div>
-        <div class="nav-link">
-          <div class="media align-items-center">
-            <%= link_to ('<i class="fas fa-user fa-2x icon-perso"></i>'.html_safe), patients_path, class: "link_color-icon" %>
-            <%= link_to "Mon profil", patients_path, class: 'link_color-sidebar' %>
-          </div>
-          </div>
-        </div>
-      </div>
-    </li>
-  </ul>
-</nav>
-
-    
-<!-- Sidebar Toggle JS script-->
-<script>
+      </li>
+    </ul>
+  </nav>
+  <!-- Sidebar Toggle JS script-->
+  <script>
     $(document).ready(function () {
-
+    
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });
-
+    
         });
-</script>
-
+  </script>

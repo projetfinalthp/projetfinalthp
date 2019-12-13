@@ -1,55 +1,48 @@
 <%= render 'layouts/side-navbar-patient' %>
-<%= render 'layouts/top-navbar-patient' %>
-<div class="container">
-  <div class="row">
-    <div class="content">
-      <h5>Mes prochains rendez-vous</h5>
-      <div class="container-fluid">
-        <div class="row">
-          <% @patient_appointments.each do |appointment| %>
-            <div class="card mb-3 mr-3" style="width: 18rem;">
-              <div class="card-header"><%= appointment.date %></div>
-              <div class="card-body">
-                <img src="https://bit.ly/352vL1I" class="float-left rounded-circle avatar-md">
-                <div class="content">
-                  <h5 class="card-title">Nom du docteur</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Psychiatre</h6>
-                  <br>
-                </div>
-                <p class="card-text">Conventionné secteur 1
-                  <br>
-                  Adresse</p>
-                <div class="card-link"><%= link_to "VOIR PLUS", practionner_path %></div>
-                <a href="#" class="card-link">Prendre RDV</a>
-              </div>
-            </div>
-          <% end %>
+<!-- Page Content  -->
+<div id="content">
+  <%= render 'layouts/top-navbar-patient' %>
+  <div class="container">
+    <h2 class="text-center">Mon équipe soignante et mes rendez-vous</h2>
+    <hr class="accent mb-3">
+    <div class="line"></div>
+    <h5>Mes prochains rendez-vous</h5>
+    <% @patient_appointments.each do |appointment| %>
+      <div class="card mb-3 mr-3" style="width: 18rem;">
+        <div class="card-header"><%= appointment.date %></div>
+        <div class="card-body">
+          <img src="https://bit.ly/352vL1I" class="float-left rounded-circle avatar-md">
+          <div class="content">
+            <h5 class="card-title">Nom du docteur</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Psychiatre</h6>
+            <br>
+          </div>
+          <p class="card-text">Conventionné secteur 1
+            <br>
+            Adresse</p>
+          <div class="card-link"><%= link_to "VOIR PLUS", practionner_path %></div>
+          <a href="#" class="card-link">Prendre RDV</a>
         </div>
       </div>
-    </div>
-    <div class="content">
-      <h5>Mon équipe soignante</h5>
-      <br>
-      <div class="row">
-        <% @patient_practionners.each do |practionner| %>
-          <div class="card mb-3 mr-3" style="width: 18rem;">
-            <div class="card-body">
-              <img src="https://bit.ly/352vL1I" class="float-left rounded-circle avatar-md">
-              <div class="content">
-                <h5 class="card-title">Dr. <%= practionner.first_name %> <%= practionner.last_name %></h5>
-                <h6 class="card-subtitle mb-2 text-muted">Psychiatre</h6>
-                <br>
-              </div>
-              <p class="card-text">Conventionné secteur 1
-                <br>
-                Adresse</p>
-              <div class="card-link"><%= link_to "VOIR PLUS", practionner_path %></div>
-              <a href="#" class="card-link">Prendre RDV</a>
-            </div>
+    <% end %>
+    <div class="line"></div>
+    <h5>Mon équipe soignante</h5>
+    <% @patient_practionners.each do |practionner| %>
+      <div class="card mb-3 mr-3" style="width: 18rem;">
+        <div class="card-body">
+          <img src="https://bit.ly/352vL1I" class="float-left rounded-circle avatar-md">
+          <div class="content">
+            <h5 class="card-title">Dr. <%= practionner.first_name %> <%= practionner.last_name %></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Psychiatre</h6>
+            <br>
           </div>
-        <% end %>
-      </div>
+          <p class="card-text">Conventionné secteur 1
+            <br>
+            Adresse</p>
+          <div class="card-link"><%= link_to "VOIR PLUS", practionner_path %></div>
+          <a href="#" class="card-link">Prendre RDV</a>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
-
