@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-    <link rel="stylesheet" href="practionner_welcome_email.css">
-  </head>
-  <body>
-    <img src="https://i.ibb.co/PmfTM9j/Moodlinkv3.png" class="logo-size">
-    <br>
-    <h1>Bonjour Dr <%= @user.last_name %> et bienvenue sur Bipolink !</h1>
-    <p>
-      L'application Bipolink est un outil vous permettant d'améliorer le diagnostique et le suivi de la bipolarité de vos patients.
-    </p>
-    <p>
-      Pour accéder à votre dashboard, connectez-vous via : <%= @url %> avec votre adresse e-mail : <%= @user.email %>..
-    </p>
-    <p> À très vite sur finalprojectthp-staging.herokuapp.com !
-    </body>
-  </html>
+<head>
+
+<link rel="stylesheet" href="welcome_email.css" />
+<title>Bipolink</title>
+</head>
+    <header>
+    <img src="https://i.ibb.co/PmfTM9j/Moodlinkv3.png" >
+    </header>
+    <body>
+        <div class="email-container">
+              <td valign="middle" class="hero">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="text" style="padding: 0 3em; text-align: center;">
+                                <h2>Bonjour Docteur <%= practionner.first_name %> <%= practionner.last_name %> </h2>
+                                <h3>Bienvenue sur Bipolink !</h3>
+                                <img class="mx-auto rounded-circle" src="https://i.goopics.net/nyPvX.png" alt="">
+                                <p>L'application Bipolink est un outil vous permettant d'améliorer le diagnostique et le suivi de la bipolarité de vos patients.<br>
+                                    Pour accéder à votre dashboard, connectez-vous via : <%= @url %> avec votre adresse e-mail : <%= @practionner.email %>.</p>
+                                <p><a href="http://finalprojectthp-staging.herokuapp.com" >À très vite sur Bipolink !</a></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+              </td>
+              </tr><!-- end tr -->
+            </body>
+</html>

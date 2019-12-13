@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <h1>Salut <%= @user.first_name %> et bienvenue chez nous !</h1>
-    <p>
-      Tu t'es inscrit sur monsite.fr en utilisant l'e-mail suivant : <%= @user.email %>.
-    </p>
-    <p>
-      Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
-    </p>
-    <p> À très vite sur monsite.fr !
-  </body>
+<head>
+
+<link rel="stylesheet" href="welcome_email.css" />
+<title>Bipolink</title>
+</head>
+    <header>
+    <img src="https://i.ibb.co/PmfTM9j/Moodlinkv3.png" >
+    </header>
+    <body>
+        <div class="email-container">
+              <td valign="middle" class="hero">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="text" style="padding: 0 3em; text-align: center;">
+                                <h2>Bonjour <%= patient.first_name %> <%= patient.last_name %> </h2>
+                                <h3>Bienvenue sur Bipolink !</h3>
+                                <img class="mx-auto rounded-circle" src="https://i.goopics.net/nyPvX.png" alt="">
+                                <p>L'application Bipolink est un outil de diagnostique et suivi pour les personne atteinte de bipolarité.<br>
+                                    Pour accéder à votre dashboard, connectez-vous via : <%= @url %> avec votre adresse e-mail : <%= @patient.email %>.</p>
+                                <p><a href="http://finalprojectthp-staging.herokuapp.com" >À très vite sur Bipolink !</a></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+              </td>
+              </tr><!-- end tr -->
+            </body>
 </html>
