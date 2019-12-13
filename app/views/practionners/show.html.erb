@@ -7,12 +7,15 @@
   <h2 class="text-center">Mon dashboard</h2>
       <hr class="accent mb-3">
   <div class="line"></div>
+  <br>
+  <h5>Mes rendez-vous du jour</h5>
   <% @patients_of_the_day.each do |patient_of_the_day| %>
     <div class="card mb-3">
       <div class="card-body">
-        <h5 class="card-title"><%= patient_of_the_day.first_name %></h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <img src="https://bit.ly/352vL1I" class="float-left rounded-circle avatar-md">
+        <h5 class="card-title"><%= patient_of_the_day.first_name %> <%= patient_of_the_day.last_name %></h5>
+        <p class="card-text">Dernières notes : Période de stabilisation de l'humeur du patient</p>
+        <p class="card-text"><small class="text-muted"> <%= Time.now.strftime("%m/%d/%Y at %I:%M%p") %> </small></p>
       </div>
     </div>
   <% end %>
