@@ -37,9 +37,14 @@
               <div class="card-body">
                 <p><%= current_practionner.email %></p>
               </div>
+              <div class="card-header">
+                Modifier vos informations
+              </div>
+              <div class="card-body">
+                <center><%= link_to "Editer mon profil", edit_practionner_path(@id_user), class:"button_color-profile" %></center>
+              </div>
             </div>
             <br>
-            <center><button class="btn btn-dark btn-xl text-uppercase js-scroll-trigger"> <%= link_to "Editer mon profil", edit_practionner_path(@id_user) %></button></center>
           </div>
         </div>
       </div>

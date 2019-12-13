@@ -2,9 +2,9 @@
   <section id="bipolink">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark " id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="mx-auto" src="https://i.goopics.net/PgPnd.png" alt=""></a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+       <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="mx-auto" src="https://i.goopics.net/PgPnd.png" alt=""></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
       </button>
@@ -31,6 +31,7 @@
       </div>
     </div>
   </nav>
+
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">BipoLink</h2>
@@ -43,29 +44,28 @@
           <h3 class="section-subheading">un patient</h3>
           <img class="mx-auto rounded-circle" src="https://i.goopics.net/3KnvQ.png" alt=""><br><br>
             <div class="text-center">            
-                <% if patient_signed_in? %>                 
-                    <%= link_to "Se déconnecter", destroy_patient_session_path, method: :delete %>             
-                <% else %>
-                    <button class="btn btn-light btn-xl text-uppercase js-scroll-trigger"> <%= link_to "connexion",new_patient_session_path %></button> 
-                    <p class="text-muted"><%= link_to "Pas encore inscrit ?", new_patient_registration_path %></p>          
-                <% end %>       
+              <% if patient_signed_in? %>                 
+                <%= link_to "Se déconnecter", destroy_patient_session_path, method: :delete %>             
+              <% else %>
+                <button class="btn btn-light btn-xl text-uppercase js-scroll-trigger"> <%= link_to "Connexion",new_patient_session_path, class:"button_color-bipolink" %></button> 
+                <p><%= link_to "Pas encore inscrit ?", new_patient_registration_path, class:"link_color-bipolink" %></p>
+              <% end %>
             </div>
-        </div>
-        <div class="col-md-6">
+          </div>
+          <div class="col-md-6">
             <h4 class="section-heading"> Vous êtes</h4>
             <h3 class="section-subheading">un professionel de santé</h3>
             <img class="mx-auto rounded-circle" src="https://i.goopics.net/nyPvX.png" alt=""><br><br>
-              <div class="text-center">             
-                <% if practionner_signed_in? %>                  
-                    <%= link_to "Se déconnecter", destroy_practionner_session_path, method: :delete %>                  
-                <% else %>                  
-                    <button class="btn btn-light text-uppercase js-scroll-trigger"> <%= link_to "Connexion", new_practionner_session_path %></button>                                   
-                    <p class="text-muted"><%= link_to "Pas encore inscrit ?", new_practionner_registration_path %>      
-                <% end %>
-              
+            <div class="text-center">             
+              <% if practionner_signed_in? %>                  
+                <%= link_to "Se déconnecter", destroy_practionner_session_path, method: :delete %>                  
+              <% else %>                  
+                <button class="btn btn-light text-uppercase js-scroll-trigger"> <%= link_to "Connexion", new_practionner_session_path, class:"button_color-bipolink" %></button>      
+                <p class="text-muted"><%= link_to "Pas encore inscrit ?", new_practionner_registration_path, class:"link_color-bipolink" %>      
+              <% end %>              
+            </div>
+          </div>
         </div>
-        </div>
-      </div>
     </div>
   </section>
   <!-- prez application -->
