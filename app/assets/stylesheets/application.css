@@ -48,7 +48,7 @@ p {
 #bipolink {
     text-align: center;
     color: #FFFFFF;
-    padding: 0px 0px 50px 0;
+    padding: 0px 0px 50px 0 !important;
     margin: auto;
     background-color: #29ace2;
     background-repeat: no-repeat;
@@ -115,8 +115,4 @@ p {
 
 #content {
   width: 100%;
-}
-
-.container {
-  padding: 30px;
 }
