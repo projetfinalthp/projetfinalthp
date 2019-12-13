@@ -5,12 +5,11 @@ class DaysController < ApplicationController
 	end
 
 	def create
-		@day = Day.new(day_params)
-		@day.save
-	end
-
-	private
-	def day_params
-		params_require(:day).permit(:mood, :hours_of_sleep)
+		@day = Day.new(mood: params[:mood], hours_of_sleep: params[:hours_of_sleep])
+		if @day.save
+		redirect_to patient_path(current_patient.id)
+		else
+		redirect_to root_path
+		end
 	end
 end

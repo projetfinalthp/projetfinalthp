@@ -7,14 +7,58 @@
     <h2 class="text-center">Mon dashboard</h2>
         <hr class="accent mb-3">
         <h4>Ma courbe d'humeur</h4>
-        <%= line_chart @patient_day.group_by_day(:created_at).sum(:mood) %>
+        <%= line_chart @patient_day.group_by_day(:date).sum(:mood) %>
         <br>
+
+        <div class= container>
+<%= form_for @day do |f| %>
+
+  <div class="form-group">
+     <label><em>Ajouter une humeur</em></label>
+    <%= f.number_field :mood, class: "form-control" %>
+</div>
+
+<div>
+    <%= f.submit "Mettre à jour" %>
+</div>
+<% end %>
+</div>
+
+
         <h4>Mon sommeil</h4>
-        <%= line_chart @patient_day.group_by_day(:created_at).sum(:hours_of_sleep) %>
+        <%= line_chart @patient_day.group_by_day(:date).sum(:hours_of_sleep) %>
+
+         <div class= container>
+<%= form_for @day do |f| %>
+  <div class="form-group">
+     <label><em>Ajouter une heure de sommeil</em></label>
+    <%= f.number_field :hours_of_sleep, class: "form-control" %>
+</div>
+<div>
+    <%= f.submit "Mettre à jour" %>
+</div>
+<% end %>
+</div>
+
       </div>
     </div>
+
+
+
+
   </div>
+
+ 
+
+
+
 <% else %>
+
+
+
+
+
+
     <%= render 'layouts/side-navbar-doctor' %>
   <!-- Page Content  -->
   <div id="content">

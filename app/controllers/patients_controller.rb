@@ -7,6 +7,7 @@ before_action :authorize_user, except: [:index]
 
   def show
   	@patient_day = Patient.find(params[:id]).days
+    @day = Day.new
   end
 
   def edit
