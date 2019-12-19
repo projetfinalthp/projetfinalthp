@@ -48,8 +48,8 @@
         <% if patient_signed_in? %>
           <%= link_to "Se déconnecter", destroy_patient_session_path, class:"link_color-bipolink", method: :delete %>
         <% else %>
-          <button class="btn btn-light btn-xl text-uppercase js-scroll-trigger"> <%= link_to "Connexion",new_patient_session_path, class:"button_color-bipolink" %></button>
-          <p><%= link_to "Pas encore inscrit ?", new_patient_registration_path, class:"link_color-bipolink" %></p>
+          <button class="btn btn-light btn-xl text-uppercase js-scroll-trigger"> <%= link_to "Connexion",root_path, class:"button_color-bipolink" %></button>
+          <p><%= link_to "Pas encore inscrit ?", root_path, class:"link_color-bipolink" %></p>
         <% end %>
       </div>
     </div>
@@ -62,8 +62,8 @@
         <% if practionner_signed_in? %>
           <%= link_to "Se déconnecter", destroy_practionner_session_path, class:"link_color-bipolink", method: :delete %>
         <% else %>
-          <button class="btn btn-light text-uppercase js-scroll-trigger"> <%= link_to "Connexion", new_practionner_session_path, class:"button_color-bipolink" %></button>
-          <p class="text-muted"><%= link_to "Pas encore inscrit ?", new_practionner_registration_path, class:"link_color-bipolink" %>
+          <button class="btn btn-light text-uppercase js-scroll-trigger"> <%= link_to "Connexion", root_path, class:"button_color-bipolink" %></button>
+          <p class="text-muted"><%= link_to "Pas encore inscrit ?", root_path, class:"link_color-bipolink" %>
           <% end %>
         </div>
       </div>
@@ -90,7 +90,7 @@
       <div class="col-md-6">
         <h3>Un suivi facile en quelques clics !</h3>
         <br>
-        <p class="text-muted">Bipolink, votre application compagnon pour vous suivre au quotidien.<br><br> L'application vous permet de renseigner un ensemble d'informations pour suivre l'évolution de votre état physique et mental. Si vous le souhaitez, vous pourrez égaleemnt partager ces informations avec vos soignants. Des données qui permettront d'affiner le diagnostic et d'améliorer le suivi de la maldie. </p>
+        <p class="text-muted">Bipolink, votre application compagnon pour vous suivre au quotidien.<br><br> L'application vous permet de renseigner un ensemble d'informations pour suivre l'évolution de votre état physique et mental. Si vous le souhaitez, vous pourrez également partager ces informations avec vos soignants. Des données qui permettront d'affiner le diagnostic et d'améliorer le suivi de la maladie. </p>
          <br>
          <br>
         <h4>Télécharger l'application :</h4>
@@ -121,7 +121,7 @@
       <h2 class="section-heading text-uppercase">En quelques chiffres</h2> <br> <br> <br>
       <div class="row text-center">
         <div class="col-md-4">
-          <h2>1 000 000 </h4>
+          <h2>1 M </h4>
           <p class="text-muted">de patients bipolaires estimés en France</p>
         </div>
         <div class="col-md-4">
